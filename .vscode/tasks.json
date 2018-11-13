@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "npm-run-start",
+            "type":"shell",
+            "args": [
+                "run",
+                "start"
+            ],
+            "command": "npm",
+            "isBackground": true,
+            "problemMatcher": [
+                {
+                  "pattern": [
+                    {
+                      "regexp": "\\b\\B",
+                      "file": 1,
+                      "location": 2,
+                      "message": 3
+                    }
+                  ],
+                  "background": {
+                    "activeOnStart": false,
+                    "beginsPattern": "^.*@* start*",
+                    "endsPattern": "^.*Compiled successfully!*"
+                  }
+                }
+              ]
+        }
+    ]
+  }
