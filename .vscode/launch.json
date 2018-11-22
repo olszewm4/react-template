@@ -5,6 +5,32 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Debug (Chrome)",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:3000",
+            "preLaunchTask": "npm-run-start",
+            "webRoot": "${workspaceRoot}",
+            "sourceMaps": true
+        },
+        {
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "name": "Debug (Firefox)",
+            "url": "http://localhost:3000",
+            "preLaunchTask": "npm-run-start",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "type": "edge",
+            "request": "launch",
+            "name": "Debug (Edge)",
+            "url": "http://localhost:3000",
+            "preLaunchTask": "npm-run-start",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
             "type": "node",
             "name": "vscode-jest-tests",
             "request": "launch",
@@ -19,15 +45,5 @@
             "protocol": "inspector",
             "internalConsoleOptions": "neverOpen"
         },
-        {
-            "name": "Debug (Chrome)",
-            "type": "chrome",
-            "request": "launch",
-            "url": "http://localhost:3000",
-            "preLaunchTask": "npm-run-start",
-            "webRoot": "${workspaceRoot}",
-            "sourceMaps": true
-        },
-        
     ]
 }
