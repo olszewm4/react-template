@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './App.css';
 
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router-dom'
 import logo from './logo.svg';
 class App extends React.Component<any, IState> {
@@ -28,9 +28,9 @@ class App extends React.Component<any, IState> {
             To get started, edit <code>src/App.tsx</code> and save to reload.
           </p>
           <p>
-            <Link to="/Home" >Home</Link>
-            <br/>
-            <Link to="/About/3/test" >About</Link>
+            <Link to="/Home" >Home by Link</Link>
+            <Link to="/About/3/test">About by Link</Link>
+            <NavLink to="/About/4/test" activeStyle={{ color: 'red' }}>About by Navlink</NavLink>
           </p>
           <div>
             <span>Simple form to redirect</span>
