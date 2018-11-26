@@ -1,10 +1,11 @@
 import * as React from 'react';
-import './App.css';
+import './Header.css';
 
 import { Link, NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router-dom'
 import logo from './logo.svg';
-class App extends React.Component<any, IState> {
+
+class HeaderComponent extends React.Component<any, IState> {
 
   /**
    *
@@ -60,4 +61,4 @@ interface IState {
   name: string,
 }
 
-export default withRouter(App);
+export default withRouter(HeaderComponent);
