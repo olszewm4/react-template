@@ -15,12 +15,17 @@ export default class AnimatedRouterComponent extends Component<AnimatedRouterCom
     public render() {
         return (
             <PoseGroup>
-                <this.RouteContainer key={(this.props.location as  H.Location).key}>
+                <this.RouteContainer key={this.getLocationKey()}>
                     <RouterComponent location={this.props.location} />
                 </this.RouteContainer>
             </PoseGroup>
         )
     }
+
+    private getLocationKey() : string {
+        return (this.props.location as H.Location).key || (this.props.location as H.Location).pathname;
+    }
+
 }
 
 // tslint:disable-next-line:interface-name
