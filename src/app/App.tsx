@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { BrowserRouter, Route, RouteProps } from 'react-router-dom';
-import AnimatedRouterComponent from 'src/config/routing-animation/AnimatedRouterComponent';
-import HeaderComponent from '../components/header/HeaderComponent';
-import './App.css';
+import HeaderComponent from './components/header/HeaderComponent';
+import AnimatedRouterComponent from './config/routing-animation/AnimatedRouterComponent';
+import './content/App.css';
 
 class App extends React.Component<any, any> {
 

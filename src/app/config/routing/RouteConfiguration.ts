@@ -1,7 +1,7 @@
 import { RouteProps } from 'react-router';
-import AboutPage from 'src/pages/about/about';
-import HomePage from 'src/pages/home/home';
-import NotFoundPage from 'src/pages/notFound/notFound';
+import AboutPage from 'src/app/pages/about/about';
+import HomePage from 'src/app/pages/home/home';
+import NotFoundPage from 'src/app/pages/notFound/notFound';
 
 
 export class RouteConfiguration {
