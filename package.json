@@ -4,10 +4,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^3.6.0",
+    "@material-ui/icons": "^3.0.1",
+    "@types/material-ui": "^0.21.5",
     "@types/react-redux": "^6.0.10",
+    "notistack": "^0.4.0",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
     "react-pose": "^4.0.2",
+    "react-redux": "^5.1.1",
     "react-router-dom": "^4.3.1",
     "react-scripts-ts": "3.1.0",
     "redux": "^4.0.1"
@@ -20,6 +25,7 @@
     "eject": "react-scripts-ts eject"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.6",
     "@types/enzyme": "^3.1.15",
     "@types/enzyme-adapter-react-16": "^1.0.3",
     "@types/jest": "^23.3.9",

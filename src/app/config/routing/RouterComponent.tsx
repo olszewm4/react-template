@@ -1,10 +1,10 @@
-import * as H from 'history';
-import { Component } from 'react';
+import { PureComponent } from 'react';
 import * as React from 'react';
 import { Route, RouteProps, Switch } from 'react-router-dom';
 import RouteConfiguration from './RouteConfiguration';
+import { RouterProps } from './typings';
 
-export default class RouterComponent extends Component<RouterComponentProps, any> {
+class RouterComponent extends PureComponent<RouterProps, any> {
 
     public render() {
         return (
@@ -17,7 +17,5 @@ export default class RouterComponent extends Component<RouterComponentProps, any
     }
 }
 
-// tslint:disable-next-line:interface-name
-interface RouterComponentProps {
-    location?: H.Location
-}
+
+export default RouterComponent;

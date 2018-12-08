@@ -11,7 +11,7 @@ body {
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 36px;
 }
 
 .App-header {
@@ -32,4 +32,11 @@ body {
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+
+
+.main-container {
+  margin-top: 10px;
+  padding: 10px;
 }

@@ -1,0 +1,8 @@
+.sectionMainDesktopMenu {
+    flex-direction: row;
+    display: flex;
+}
+
+.inherit-min-height {
+    min-height: inherit;
+}
