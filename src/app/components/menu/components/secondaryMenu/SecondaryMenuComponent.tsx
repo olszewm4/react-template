@@ -1,10 +1,11 @@
-import { Badge, IconButton, Menu, MenuItem } from '@material-ui/core';
+import { Badge, Grid, IconButton, Menu, MenuItem } from '@material-ui/core';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import * as React from 'react';
 import { PureComponent } from 'react';
+import ProfileMenuContainer from './components/profileMenu/ProfileMenuContainer';
 import { SecondaryMenuProps, SecondaryMenuVersions } from './typings';
 
 export default class SecondaryMenuComponent extends PureComponent<SecondaryMenuProps, any> {
@@ -24,45 +25,48 @@ export default class SecondaryMenuComponent extends PureComponent<SecondaryMenuP
         const { openProfileMenu, closeSecondaryMenu } = this.props;
 
         return (
-            <Menu
-                anchorEl={anchorElement}
-                anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-                transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-                open={isSecondaryMenuOpen}
-                onClose={closeSecondaryMenu}>
-                <MenuItem>
-                    <IconButton color="inherit">
-                        <Badge badgeContent={4} color="secondary">
-                            <MailIcon />
-                        </Badge>
-                    </IconButton>
-                    <p>Messages</p>
-                </MenuItem>
-                <MenuItem>
-                    <IconButton color="inherit">
-                        <Badge badgeContent={11} color="secondary">
-                            <NotificationsIcon />
-                        </Badge>
-                    </IconButton>
-                    <p>Notifications</p>
-                </MenuItem>
-                <MenuItem onClick={openProfileMenu}>
-                    <IconButton color="inherit">
-                        <AccountCircle />
-                    </IconButton>
-                    <p>Profile</p>
-                </MenuItem>
-            </Menu>
+            <React.Fragment>
+                <ProfileMenuContainer />
+                <Menu
+                    anchorEl={anchorElement}
+                    anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+                    transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+                    open={isSecondaryMenuOpen}
+                    onClose={closeSecondaryMenu}>
+                    <MenuItem>
+                        <IconButton color="inherit">
+                            <Badge badgeContent={4} color="secondary">
+                                <MailIcon />
+                            </Badge>
+                        </IconButton>
+                        <p>Messages</p>
+                    </MenuItem>
+                    <MenuItem>
+                        <IconButton color="inherit">
+                            <Badge badgeContent={11} color="secondary">
+                                <NotificationsIcon />
+                            </Badge>
+                        </IconButton>
+                        <p>Notifications</p>
+                    </MenuItem>
+                    <MenuItem onClick={openProfileMenu}>
+                        <IconButton color="inherit">
+                            <AccountCircle />
+                        </IconButton>
+                        <p>Profile</p>
+                    </MenuItem>
+                </Menu>
+            </React.Fragment>
         );
     }
 
     private renderDesktop() {
-        const { classes } = this.props; 
+        const { classes } = this.props;
         const { isSecondaryMenuOpen } = this.props;
         const { openProfileMenu, openSecondaryMenu } = this.props;
 
         return (
-            <React.Fragment>
+            <Grid container={true} item={true} xs={true} className={classes.flex} alignItems={"center"} justify={"flex-end"} >
                 <div className={classes.sectionDesktop}>
                     <IconButton color="inherit">
                         <Badge badgeContent={4} color="secondary">
@@ -86,7 +90,7 @@ export default class SecondaryMenuComponent extends PureComponent<SecondaryMenuP
                 <IconButton className={classes.sectionMobile} aria-haspopup="true" onClick={openSecondaryMenu} color="inherit">
                     <MoreIcon />
                 </IconButton>
-            </React.Fragment>
+            </Grid>
         );
     }
 }

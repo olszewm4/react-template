@@ -1,3 +1,4 @@
+import { PrimaryMenuActionTypes } from '../components/menu/components/primaryMenu/actions/PrimaryMenuActionTypes';
 import { SecondaryMenuActionTypes } from '../components/menu/components/secondaryMenu/actions/SecondaryMenuActionTypes';
 import { ProfileMenuActionTypes } from '../components/menu/components/secondaryMenu/components/profileMenu/actions/ProfileMenuActions';
 import { UserAddActionTypes } from '../pages/user/add/UserAddActionTypes';
@@ -7,6 +8,7 @@ export type AppActionTypes =
     UserAddActionTypes | 
     UserUpdateActionTypes |
     ProfileMenuActionTypes |
-    SecondaryMenuActionTypes;
+    SecondaryMenuActionTypes |
+    PrimaryMenuActionTypes;
 
 
