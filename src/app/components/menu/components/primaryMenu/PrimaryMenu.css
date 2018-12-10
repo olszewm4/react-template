@@ -3,6 +3,3 @@
     display: flex;
 }
 
-.inherit-min-height {
-    min-height: inherit;
-}

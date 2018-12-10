@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { BrowserRouter, Route, RouteProps } from 'react-router-dom';
 import HeaderComponent from './components/header/HeaderComponent';
-import MenuComponent from './components/menu/MenuComponent';
+import MenuContainer from './components/menu/MenuContainer';
 import AnimatedRouterComponent from './config/routing-animation/AnimatedRouterComponent';
 import './content/App.css';
 
@@ -21,7 +21,7 @@ class App extends React.Component<AppProps, any> {
   private renderBody = (props: RouteProps) => {
     return (
       <React.Fragment>
-        <MenuComponent />
+        <MenuContainer />
         <HeaderComponent />
         <div className="main-container">
           <AnimatedRouterComponent location={props.location} />
