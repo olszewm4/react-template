@@ -5,6 +5,9 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import * as React from 'react';
 import { PureComponent } from 'react';
+import { Languages } from 'src/app/common/Languages';
+import LanguageToFlagComponent from './components/languageMenu/components/LanguageToFlag/LanguageToFlagComponent';
+import LanguageMenuContainer from './components/languageMenu/LanguageMenuContainer';
 import ProfileMenuContainer from './components/profileMenu/ProfileMenuContainer';
 import { SecondaryMenuProps, SecondaryMenuVersions } from './typings';
 
@@ -21,12 +24,13 @@ export default class SecondaryMenuComponent extends PureComponent<SecondaryMenuP
     }
 
     private renderMobile() {
-        const { anchorElement, isSecondaryMenuOpen } = this.props;
-        const { openProfileMenu, closeSecondaryMenu } = this.props;
+        const { anchorElement, isSecondaryMenuOpen, lng } = this.props;
+        const { openProfileMenu, closeSecondaryMenu, openLanguageMenu } = this.props;
 
         return (
             <React.Fragment>
                 <ProfileMenuContainer />
+                <LanguageMenuContainer />
                 <Menu
                     anchorEl={anchorElement}
                     anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
@@ -49,6 +53,12 @@ export default class SecondaryMenuComponent extends PureComponent<SecondaryMenuP
                         </IconButton>
                         <p>Notifications</p>
                     </MenuItem>
+                    <MenuItem onClick={openLanguageMenu}>
+                        <IconButton color="inherit">
+                            <LanguageToFlagComponent language={lng as Languages} />
+                        </IconButton>
+                        <p>Change language</p>
+                    </MenuItem>
                     <MenuItem onClick={openProfileMenu}>
                         <IconButton color="inherit">
                             <AccountCircle />
@@ -61,9 +71,10 @@ export default class SecondaryMenuComponent extends PureComponent<SecondaryMenuP
     }
 
     private renderDesktop() {
+        const currentLanguage = this.props.lng as Languages;
         const { classes } = this.props;
         const { isSecondaryMenuOpen } = this.props;
-        const { openProfileMenu, openSecondaryMenu } = this.props;
+        const { openProfileMenu, openSecondaryMenu, openLanguageMenu } = this.props;
 
         return (
             <Grid container={true} item={true} xs={true} className={classes.flex} alignItems={"center"} justify={"flex-end"} >
@@ -78,12 +89,17 @@ export default class SecondaryMenuComponent extends PureComponent<SecondaryMenuP
                             <NotificationsIcon />
                         </Badge>
                     </IconButton>
+                    <IconButton aria-owns={isSecondaryMenuOpen ? 'material-appbar' : undefined}
+                        aria-haspopup="true"
+                        onClick={openLanguageMenu}
+                        color="inherit">
+                        <LanguageToFlagComponent language={currentLanguage} />
+                    </IconButton>
                     <IconButton
                         aria-owns={isSecondaryMenuOpen ? 'material-appbar' : undefined}
                         aria-haspopup="true"
                         onClick={openProfileMenu}
-                        color="inherit"
-                    >
+                        color="inherit">
                         <AccountCircle />
                     </IconButton>
                 </div>

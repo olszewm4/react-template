@@ -4,7 +4,7 @@ import * as classNames from 'classnames';
 import { PureComponent } from 'react';
 import * as React from 'react';
 import './../../../../common/commonStyles.css';
-import LogoComponent from './components/LogoComponent';
+import LogoContainer from './components/LogoContainer';
 import './PrimaryMenu.css';
 import { PrimaryMenuProps, PrimaryMenuVersions } from './typings';
 
@@ -41,7 +41,7 @@ export class PrimaryMenuComponent extends PureComponent<PrimaryMenuProps, any> {
                 <Grid item={true} xs={true}>
                     <Hidden smDown={true}>
                         <Grid container={true} alignItems="center">
-                            <LogoComponent />
+                            <LogoContainer />
                         </Grid>
                     </Hidden>
                     <Hidden mdUp={true}>
@@ -50,7 +50,7 @@ export class PrimaryMenuComponent extends PureComponent<PrimaryMenuProps, any> {
                         </IconButton>
                     </Hidden>
                 </Grid>
-                <Grid container={true} item={true} xs={true} className={classNames(classes.sectionDesktop, "inherit-min-height")} alignItems={"center"} justify={"center"}>
+                <Grid container={true} item={true} xs={6} className={classNames(classes.sectionDesktop, "inherit-min-height")} alignItems={"center"} justify={"center"}>
                     <List className={classNames("sectionMainDesktopMenu", "inherit-min-height")} disablePadding={true}>
                         {this.renderMenu()}
                     </List>
@@ -73,7 +73,7 @@ export class PrimaryMenuComponent extends PureComponent<PrimaryMenuProps, any> {
                     }}>
                     <List>
                         <ListItem style={{ justifyContent: 'left', paddingLeft: 0 }} >
-                            <LogoComponent />
+                            <LogoContainer />
                         </ListItem>
                         <Divider />
                         {this.renderMenu()}
@@ -87,9 +87,9 @@ export class PrimaryMenuComponent extends PureComponent<PrimaryMenuProps, any> {
         return (
             <React.Fragment>
                 {this.menuItems.map((value: MenuItem, index: number) => (
-                    <ListItem button={true} key={index} onClick={this.onMenuItemClick.bind(this, value)}>
+                    <ListItem button={true} key={index} onClick={this.onMenuItemClick.bind(this, value)} style={{ textAlign: "unset", width: "unset" }} >
                         <strong>
-                            {value.name}
+                            {this.props.t(value.name, { ns: "PrimaryMenuComponent", defaultValue: value.name })}
                         </strong>
                     </ListItem>
                 ))}

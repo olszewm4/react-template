@@ -2,16 +2,17 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #222;
 }
 
 
 .App {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 36px;
 }
 
 .App-header {
@@ -29,14 +30,8 @@ body {
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-
 
 .main-container {
-  margin-top: 10px;
-  padding: 10px;
+  margin-top: 4em;
+  padding: 1em 2em 1em 2em;
 }

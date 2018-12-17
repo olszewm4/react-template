@@ -4,14 +4,12 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { combinedReducers } from 'src/index.store';
 
+export let Store = createStore(combinedReducers);
+
 export class StoreProviderWrapper extends PureComponent {
-
-    private store = createStore(combinedReducers);
-
-
     public render() {
         return (
-            <Provider store={this.store}>
+            <Provider store={Store}>
                 {this.props.children}
             </Provider>
         );

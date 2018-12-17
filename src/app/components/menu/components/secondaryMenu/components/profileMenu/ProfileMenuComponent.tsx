@@ -13,6 +13,17 @@ export default class ProfileMenuComponent extends PureComponent<ProfileMenuProps
                 anchorEl={anchorElement}
                 anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
                 transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+                PaperProps={{
+                    style: {
+                        borderRadius: 0
+                    },
+                }}
+                MenuListProps={{
+                    style: {
+                        // tslint:disable-next-line:object-literal-sort-keys
+                        paddingTop: 0, paddingBottom: 0
+                    }                
+                }}
                 open={isProfileMenuOpen}
                 onClose={closeProfileMenu}>
                 <MenuItem onClick={closeProfileMenu}>Profile</MenuItem>

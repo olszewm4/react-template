@@ -1,4 +1,5 @@
 import { withStyles } from '@material-ui/core';
+import { withNamespaces } from 'react-i18next';
 import { connect } from 'react-redux';
 import { withRouter } from "react-router";
 import { Dispatch } from 'redux';
@@ -19,4 +20,4 @@ const mapDispatchToProps = (dispatch: Dispatch) : PrimaryMenuDispatchProps => ({
 });
 
 export default connect<PrimaryMenuStateProps, PrimaryMenuDispatchProps, PrimaryMenuOwnProps>
-  (mapStateToProps, mapDispatchToProps)(withStyles(PrimaryMenuStyles)(withRouter(PrimaryMenuComponent)));
+  (mapStateToProps, mapDispatchToProps)(withStyles(PrimaryMenuStyles)(withRouter(withNamespaces("PrimaryMenuComponent")(PrimaryMenuComponent))));

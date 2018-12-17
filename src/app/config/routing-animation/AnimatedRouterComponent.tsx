@@ -5,12 +5,25 @@ import posed, { PoseGroup } from 'react-pose';
 import RouterContainer from '../routing/RouterContainer';
 import { AnimatedRouterProps } from './typings';
 
+// tslint:disable:object-literal-sort-keys
 
 class AnimatedRouterComponent extends PureComponent<AnimatedRouterProps, any> {
 
     private PoseRouteContainer = posed.div({
-        enter: { opacity: 1, delay: 300, beforeChildren: true },
-        exit: { opacity: 0 }
+        enter: {
+            y: 0,
+            opacity: 1,
+            delay: 300,
+            transition: {
+                y: { type: 'spring', stiffness: 1000, damping: 15 },
+                default: { duration: 300 }
+            }
+        },
+        exit: {
+            y: 50,
+            opacity: 0,
+            transition: { duration: 150 }
+        }
     });
 
     public render() {

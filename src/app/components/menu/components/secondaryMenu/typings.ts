@@ -1,3 +1,5 @@
+import { WithNamespaces } from 'react-i18next';
+
 // tslint:disable:interface-name
 
 export enum SecondaryMenuVersions {
@@ -11,13 +13,14 @@ export interface SecondaryMenuOwnProps {
 
 export interface SecondaryMenuStateProps {
     anchorElement: any,
-    isSecondaryMenuOpen: boolean
+    isSecondaryMenuOpen: boolean,
 }
 
 export interface SecondaryMenuDispatchProps {
     openSecondaryMenu(anchorElement: any): void;
     closeSecondaryMenu(): void
     openProfileMenu(anchorElement: any): void;
+    openLanguageMenu(anchorElement: any): void;
 }
 
 interface StyledComponentProps {
@@ -25,4 +28,4 @@ interface StyledComponentProps {
 }
 
 
-export type SecondaryMenuProps = SecondaryMenuDispatchProps & SecondaryMenuStateProps & SecondaryMenuOwnProps & StyledComponentProps;
+export type SecondaryMenuProps = SecondaryMenuDispatchProps & SecondaryMenuStateProps & SecondaryMenuOwnProps & StyledComponentProps & WithNamespaces;

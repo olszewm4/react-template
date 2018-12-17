@@ -19,7 +19,7 @@ export class MenuComponent extends PureComponent<MenuComponentProps, any> {
 
         return (
             <div className={classes.root}>
-                <AppBar position="static">
+                <AppBar position="fixed">
                     <Toolbar>
                         <Grid container={true} className="inherit-min-height" justify="center" alignItems="center">
                             <PrimaryMenuContainer version={PrimaryMenuVersions.Desktop} />

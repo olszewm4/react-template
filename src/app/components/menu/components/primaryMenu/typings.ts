@@ -1,3 +1,4 @@
+import { WithNamespaces } from 'react-i18next';
 import { RouteComponentProps } from 'react-router-dom';
 
 // tslint:disable:interface-name
@@ -25,4 +26,4 @@ interface StyledComponentProps {
 }
 
 
-export type PrimaryMenuProps = PrimaryMenuDispatchProps & PrimaryMenuStateProps & PrimaryMenuOwnProps & StyledComponentProps & RouteComponentProps<any>;
+export type PrimaryMenuProps = PrimaryMenuDispatchProps & PrimaryMenuStateProps & PrimaryMenuOwnProps & StyledComponentProps & RouteComponentProps<any> & WithNamespaces;

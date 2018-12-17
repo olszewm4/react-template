@@ -1,13 +1,13 @@
 import { shallow } from 'enzyme';
 import * as React from 'react';
-import App from '../app/App';
+import { AppComponent } from 'src/app/AppComponent';
 
 it('renders without crashing', () => {
-  shallow(<App />);
+  shallow(<AppComponent />);
 });
 
 it('includes app logo', () => {
-  const app = shallow(<App />);
+  const app = shallow(<AppComponent />);
   expect(app.containsMatchingElement(<img className="App-logo" />)).toEqual(true)
 });
 
