@@ -2,11 +2,11 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "npm-run-start",
+            "label": "npm-run-start-dev",
             "type":"shell",
             "args": [
                 "run",
-                "start"
+                "start:dev"
             ],
             "command": "npm",
             "isBackground": true,
@@ -27,6 +27,60 @@
                   }
                 }
               ]
+        },
+        {
+          "label": "npm-run-start-internal.test",
+          "type":"shell",
+          "args": [
+              "run",
+              "start:internal.test"
+          ],
+          "command": "npm",
+          "isBackground": true,
+          "problemMatcher": [
+              {
+                "pattern": [
+                  {
+                    "regexp": "\\b\\B",
+                    "file": 1,
+                    "location": 2,
+                    "message": 3
+                  }
+                ],
+                "background": {
+                  "activeOnStart": false,
+                  "beginsPattern": "^.*@* start*",
+                  "endsPattern": "^.*Compiled successfully!*"
+                }
+              }
+            ]
+        },
+        {
+          "label": "npm-run-start-client.test",
+          "type":"shell",
+          "args": [
+              "run",
+              "start:client.test"
+          ],
+          "command": "npm",
+          "isBackground": true,
+          "problemMatcher": [
+              {
+                "pattern": [
+                  {
+                    "regexp": "\\b\\B",
+                    "file": 1,
+                    "location": 2,
+                    "message": 3
+                  }
+                ],
+                "background": {
+                  "activeOnStart": false,
+                  "beginsPattern": "^.*@* start*",
+                  "endsPattern": "^.*Compiled successfully!*"
+                }
+              }
+            ]
         }
     ]
   }

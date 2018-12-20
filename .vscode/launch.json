@@ -5,11 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug (Chrome)",
+            "name": "Debug DEV (Chrome)",
             "type": "chrome",
             "request": "launch",
             "url": "http://localhost:3000",
-            "preLaunchTask": "npm-run-start",
+            "preLaunchTask": "npm-run-start-dev",
             "webRoot": "${workspaceRoot}",
             "sourceMaps": true
         },
@@ -17,17 +17,69 @@
             "type": "firefox",
             "request": "launch",
             "reAttach": true,
-            "name": "Debug (Firefox)",
+            "name": "Debug DEV (Firefox)",
             "url": "http://localhost:3000",
-            "preLaunchTask": "npm-run-start",
+            "preLaunchTask": "npm-run-start-dev",
             "webRoot": "${workspaceFolder}"
         },
         {
             "type": "edge",
             "request": "launch",
-            "name": "Debug (Edge)",
+            "name": "Debug DEV (Edge)",
             "url": "http://localhost:3000",
-            "preLaunchTask": "npm-run-start",
+            "preLaunchTask": "npm-run-start-dev",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Debug INT.TEST (Chrome)",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:3000",
+            "preLaunchTask": "npm-run-start-internal.test",
+            "webRoot": "${workspaceRoot}",
+            "sourceMaps": true
+        },
+        {
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "name": "Debug INT.TEST (Firefox)",
+            "url": "http://localhost:3000",
+            "preLaunchTask": "npm-run-start-internal.test",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "type": "edge",
+            "request": "launch",
+            "name": "Debug INT.TEST (Edge)",
+            "url": "http://localhost:3000",
+            "preLaunchTask": "npm-run-start-internal.test",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Debug CLIENT.TEST (Chrome)",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:3000",
+            "preLaunchTask": "npm-run-start-client.test",
+            "webRoot": "${workspaceRoot}",
+            "sourceMaps": true
+        },
+        {
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "name": "Debug CLIENT.TEST (Firefox)",
+            "url": "http://localhost:3000",
+            "preLaunchTask": "npm-run-start-client.test",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "type": "edge",
+            "request": "launch",
+            "name": "Debug CLIENT.TEST (Edge)",
+            "url": "http://localhost:3000",
+            "preLaunchTask": "npm-run-start-client.test",
             "webRoot": "${workspaceFolder}"
         },
         {

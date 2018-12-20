@@ -11,6 +11,7 @@
     "@types/i18next-xhr-backend": "^1.4.1",
     "@types/material-ui": "^0.21.5",
     "@types/react-redux": "^6.0.10",
+    "env-cmd": "^8.0.2",
     "flag-icon-css": "^3.2.1",
     "i18next": "^12.1.0",
     "i18next-browser-languagedetector": "^2.2.4",
@@ -27,7 +28,14 @@
   },
   "scripts": {
     "start": "react-scripts-ts start",
+    "start:dev": "env-cmd ./configurations/.env.dev npm run start",
+    "start:internal.test": "env-cmd ./configurations/.env.internal.test npm run start",
+    "start:client.test": "env-cmd ./configurations/.env.client.test npm run start",
     "build": "react-scripts-ts build",
+    "build:dev": "env-cmd ./configurations/.env.dev npm run build",
+    "build:internal.test": "env-cmd ./configurations/.env.internal.test npm run build",
+    "build:client.test": "env-cmd ./configurations/.env.client.test npm run build",
+    "build:prod": "env-cmd ./configurations/.env.prod npm run build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject"

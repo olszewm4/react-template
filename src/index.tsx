@@ -8,6 +8,8 @@ import { StoreProviderWrapper } from './providers/StoreProviderWrapper';
 import { ThemeProviderWrapper } from './providers/ThemeProviderWrapper';
 import registerServiceWorker from './registerServiceWorker';
 
+// tslint:disable-next-line:no-console
+console.log(process.env);
 
 ReactDOM.render(
   <StoreProviderWrapper>
