@@ -1,9 +1,18 @@
 import { Typography } from '@material-ui/core';
+import axios from 'axios';
 import { PureComponent } from 'react';
 import * as React from 'react';
 import { HomePageComponentProps } from './typings';
 
 export default class HomePageComponent extends PureComponent<HomePageComponentProps, any> {
+
+
+  public componentDidMount(){
+    for(let i = 0;i < 3; i++){
+      axios.get("./data/tasks.json");
+    }
+  }
+
   public render() {
     return (
       <React.Fragment>

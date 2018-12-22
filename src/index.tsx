@@ -11,6 +11,7 @@ import registerServiceWorker from './registerServiceWorker';
 // tslint:disable-next-line:no-console
 console.log(process.env);
 
+
 ReactDOM.render(
   <StoreProviderWrapper>
     <SnackbarProviderWrapper>

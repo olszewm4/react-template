@@ -1,4 +1,6 @@
 import { combineReducers } from 'redux';
+import { StatisticsReducer } from './app/actions/statistics/StatisticsReducer';
+import { StatisticsState } from './app/actions/statistics/StatisticsState';
 import { PrimaryMenuReducer } from './app/components/menu/components/primaryMenu/PrimaryMenuReducer';
 import { PrimaryMenuState } from './app/components/menu/components/primaryMenu/PrimaryMenuState';
 import { LanguageMenuReducer } from './app/components/menu/components/secondaryMenu/components/languageMenu/LanguageMenuReducer';
@@ -15,12 +17,14 @@ export interface ApplicationState {
     ProfileMenuState: ProfileMenuState,
     SecondaryMenuState: SecondaryMenuState,
     PrimaryMenuState: PrimaryMenuState,
-    LanguageMenuState: LanguageMenuState
+    LanguageMenuState: LanguageMenuState,
+    StatisticsState: StatisticsState
 }
 
 export const combinedReducers = combineReducers<ApplicationState>({
     PrimaryMenuState: PrimaryMenuReducer,
     ProfileMenuState: ProfileMenuReducer,
     SecondaryMenuState: SecondaryMenuReducer,
-    LanguageMenuState: LanguageMenuReducer
+    LanguageMenuState: LanguageMenuReducer,
+    StatisticsState: StatisticsReducer
 });
