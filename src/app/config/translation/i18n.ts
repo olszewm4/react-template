@@ -16,7 +16,7 @@ i18n
   .use(reactI18nextModule) // passes i18n down to react-i18next
   .init({
     // debug: true,
-    fallbackLng: "en", // use pl if detected lng is not available
+    fallbackLng: "pl", // use pl if detected lng is not available
 ​
     keySeparator: false, // we do not use keys in form messages.welcome
 ​
@@ -27,7 +27,8 @@ i18n
     defaultNS: 'common',
     react: {
       wait: true
-    }
+    },
+    load: 'languageOnly'
   }, (t, p) => {
     // tslint:disable:no-console
     console.log(t);

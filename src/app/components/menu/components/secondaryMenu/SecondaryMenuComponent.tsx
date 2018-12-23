@@ -71,7 +71,7 @@ export default class SecondaryMenuComponent extends PureComponent<SecondaryMenuP
     }
 
     private renderDesktop() {
-        const currentLanguage = this.props.lng as Languages;
+        const currentLanguage = this.props.i18n.languages[0] as Languages;
         const { classes } = this.props;
         const { isSecondaryMenuOpen } = this.props;
         const { openProfileMenu, openSecondaryMenu, openLanguageMenu } = this.props;
