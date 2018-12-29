@@ -1,6 +1,4 @@
 import { combineReducers } from 'redux';
-import { StatisticsReducer } from './app/actions/statistics/StatisticsReducer';
-import { StatisticsState } from './app/actions/statistics/StatisticsState';
 import { PrimaryMenuReducer } from './app/components/menu/components/primaryMenu/PrimaryMenuReducer';
 import { PrimaryMenuState } from './app/components/menu/components/primaryMenu/PrimaryMenuState';
 import { LanguageMenuReducer } from './app/components/menu/components/secondaryMenu/components/languageMenu/LanguageMenuReducer';
@@ -9,6 +7,8 @@ import { ProfileMenuReducer } from './app/components/menu/components/secondaryMe
 import { ProfileMenuState } from './app/components/menu/components/secondaryMenu/components/profileMenu/ProfileMenuState';
 import { SecondaryMenuReducer } from './app/components/menu/components/secondaryMenu/SecondaryMenuReducer';
 import { SecondaryMenuState } from './app/components/menu/components/secondaryMenu/SecondaryMenuState';
+import { StatisticsReducer } from './app/infrastructure/redux/modules/statistics/StatisticsReducer';
+import { StatisticsState } from './app/infrastructure/redux/modules/statistics/StatisticsState';
 
 // tslint:disable:interface-name
 // tslint:disable:object-literal-sort-keys

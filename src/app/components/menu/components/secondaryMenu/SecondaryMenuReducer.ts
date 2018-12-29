@@ -1,6 +1,6 @@
 import { Action } from 'redux';
-import { AppActionTypes } from 'src/app/actions/AppActionTypes';
-import { ActionWithPayLoad } from 'src/app/common/ActionCreateHelper';
+import { ActionWithPayLoad } from 'src/app/infrastructure/redux/ActionCreateHelper';
+import { AppActionTypes } from 'src/app/infrastructure/redux/AppActionTypes';
 import { SecondaryMenuActionTypes } from './actions/SecondaryMenuActionTypes';
 import { ProfileMenuActionTypes } from './components/profileMenu/actions/ProfileMenuActions';
 import { SecondaryMenuState } from './SecondaryMenuState';

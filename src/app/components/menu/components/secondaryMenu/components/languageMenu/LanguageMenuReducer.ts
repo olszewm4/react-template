@@ -1,5 +1,5 @@
 import { Action } from 'redux';
-import { ActionWithPayLoad } from './../../../../../../common/ActionCreateHelper';
+import { ActionWithPayLoad } from '../../../../../../infrastructure/redux/ActionCreateHelper';
 import { LanguageMenuActionTypes } from './actions/LanguageMenuActionTypes';
 import { LanguageMenuState } from './LanguageMenuState';
 

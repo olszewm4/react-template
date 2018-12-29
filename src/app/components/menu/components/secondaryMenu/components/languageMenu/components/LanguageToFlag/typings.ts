@@ -1,4 +1,4 @@
-import { Languages } from 'src/app/common/Languages';
+import { Languages } from 'src/app/infrastructure/translation/Languages';
 
 // tslint:disable-next-line:interface-name
 export interface LanguageToFlagComponentProps {

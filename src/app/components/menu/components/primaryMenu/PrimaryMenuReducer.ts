@@ -1,5 +1,5 @@
 import { Action } from 'redux';
-import { AppActionTypes } from 'src/app/actions/AppActionTypes';
+import { AppActionTypes } from 'src/app/infrastructure/redux/AppActionTypes';
 import { PrimaryMenuActionTypes } from './actions/PrimaryMenuActionTypes';
 import { PrimaryMenuState } from './PrimaryMenuState';
 

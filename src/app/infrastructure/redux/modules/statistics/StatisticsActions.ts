@@ -1,4 +1,4 @@
-import { createAction } from "src/app/common/ActionCreateHelper";
+import { createAction } from "src/app/infrastructure/redux/ActionCreateHelper";
 import { StatisticsActionTypes } from './StatisticsActionTypes';
 
 

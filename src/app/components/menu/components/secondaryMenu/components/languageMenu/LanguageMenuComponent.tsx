@@ -1,8 +1,8 @@
 import { Menu, MenuItem } from '@material-ui/core';
 import { PureComponent } from 'react';
 import * as React from 'react';
-import { Languages } from 'src/app/common/Languages';
 import i18n from 'src/app/infrastructure/translation/i18n';
+import { Languages } from 'src/app/infrastructure/translation/Languages';
 import LanguageToFlagComponent from './components/LanguageToFlag/LanguageToFlagComponent';
 import { LanguageMenuProps } from './typings';
 
