@@ -11,7 +11,7 @@ export default class LanguageMenuComponent extends PureComponent<LanguageMenuPro
 
     public render() {
         // tslint:disable-next-line:no-console
-        console.log(this.props);
+
         const currentLanguage = this.props.lng;
         const { anchorElement, isLanguageMenuOpen } = this.props;
         const { closeLanguageMenu, t } = this.props;
