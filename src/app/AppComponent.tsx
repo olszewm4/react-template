@@ -4,11 +4,11 @@ import { BrowserRouter, Route, RouteProps } from 'react-router-dom';
 import { compose } from 'redux';
 import MenuContainer from './components/menu/MenuContainer';
 import ProgressContainer from './components/progress/ProgressContainer';
-import AnimatedRouterComponent from './config/routing-animation/AnimatedRouterComponent';
 import './content/App.css';
 import { withSnackbarProvider } from './high-order-components/SnackbarProvider/withSnackbarProvider';
 import { withStoreProvider } from './high-order-components/StoreProvider/withStoreProvider';
 import { withThemeProvider } from './high-order-components/ThemeProvider/withThemeProvider';
+import AnimatedRouterComponent from './infrastructure/routing/animation/AnimatedRouterComponent';
 
 
 class AppComponent extends React.Component {

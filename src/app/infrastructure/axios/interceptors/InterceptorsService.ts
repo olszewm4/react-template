@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import { AnyAction, Store } from 'redux';
+import { NewRequestAction, RequestCompletedAction } from 'src/app/actions/statistics/StatisticsActions';
 import { ApplicationState } from 'src/index.store';
-import { NewRequestAction, RequestCompletedAction } from './../../actions/statistics/StatisticsActions';
 
 export class InterceptorsService {
 

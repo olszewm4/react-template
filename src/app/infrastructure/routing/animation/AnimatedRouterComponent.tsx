@@ -2,7 +2,7 @@ import * as H from 'history';
 import { PureComponent } from 'react';
 import * as React from 'react';
 import posed, { PoseGroup } from 'react-pose';
-import RouterContainer from '../routing/RouterContainer';
+import RouterContainer from '../core/RouterContainer';
 import { AnimatedRouterProps } from './typings';
 
 // tslint:disable:object-literal-sort-keys
