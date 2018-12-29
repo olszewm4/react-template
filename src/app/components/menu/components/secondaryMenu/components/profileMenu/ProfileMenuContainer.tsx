@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import { ApplicationState } from "src/index.store";
+import { ApplicationState } from 'src/app/infrastructure/redux/ApplicationState';
 import { CloseProfileMenuAction } from './actions/ProfileMenuActionTypes';
 import ProfileMenuComponent from './ProfileMenuComponent';
 import { ProfileMenuDispatchProps, ProfileMenuStateProps } from './typings';

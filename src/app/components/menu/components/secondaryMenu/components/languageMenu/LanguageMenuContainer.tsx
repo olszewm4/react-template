@@ -1,7 +1,7 @@
 import { withNamespaces } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import { ApplicationState } from "src/index.store";
+import { ApplicationState } from 'src/app/infrastructure/redux/ApplicationState';
 import { CloseLanguageMenuAction } from './actions/LanguageMenuActions';
 import LanguageMenuComponent from './LanguageMenuComponent';
 import { LanguageMenuDispatchProps, LanguageMenuStateProps } from './typings';

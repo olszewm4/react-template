@@ -2,9 +2,9 @@ import * as React from 'react';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { InterceptorsService } from 'src/app/infrastructure/axios/interceptors/InterceptorsService';
-import { combinedReducers } from 'src/index.store';
+import { ApplicationReducer } from 'src/app/infrastructure/redux/ApplicationReducer';
 
-export let Store = createStore(combinedReducers);
+export let Store = createStore(ApplicationReducer);
 
 InterceptorsService.setup(Store);
 

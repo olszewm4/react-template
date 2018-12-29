@@ -3,7 +3,7 @@ import { withNamespaces } from 'react-i18next';
 import { connect } from 'react-redux';
 import { withRouter } from "react-router";
 import { Dispatch } from 'redux';
-import { ApplicationState } from 'src/index.store';
+import { ApplicationState } from 'src/app/infrastructure/redux/ApplicationState';
 import { ClosePrimaryMenuAction, OpenPrimaryMenuAction } from './actions/PrimaryMenuActions';
 import { PrimaryMenuComponent } from './PrimaryMenuComponent';
 import { PrimaryMenuStyles } from './styles';

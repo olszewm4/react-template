@@ -2,7 +2,7 @@ import { withStyles } from '@material-ui/core';
 import { withNamespaces } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import { ApplicationState } from "src/index.store";
+import { ApplicationState } from 'src/app/infrastructure/redux/ApplicationState';
 import { OpenSecondaryMenuAction } from './actions/SecondaryMenuActions';
 import { OpenLanguageMenuAction } from './components/languageMenu/actions/LanguageMenuActions';
 import { CloseProfileMenuAction, OpenProfileMenuAction } from './components/profileMenu/actions/ProfileMenuActionTypes';

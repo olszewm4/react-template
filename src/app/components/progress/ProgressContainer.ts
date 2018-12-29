@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { ApplicationState } from 'src/index.store';
+import { ApplicationState } from 'src/app/infrastructure/redux/ApplicationState';
 import ProgressComponent from './ProgressComponent';
 import { ProgressStateProps } from './typings';
 
