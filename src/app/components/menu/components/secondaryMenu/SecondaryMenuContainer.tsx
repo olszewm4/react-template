@@ -2,13 +2,13 @@ import { withStyles } from '@material-ui/core';
 import { withNamespaces } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import { ApplicationState } from 'src/app/infrastructure/redux/ApplicationState';
 import { OpenSecondaryMenuAction } from './actions/SecondaryMenuActions';
 import { OpenLanguageMenuAction } from './components/languageMenu/actions/LanguageMenuActions';
 import { CloseProfileMenuAction, OpenProfileMenuAction } from './components/profileMenu/actions/ProfileMenuActionTypes';
 import SecondaryMenuComponent from './SecondaryMenuComponent';
 import { SecondaryMenuStyles } from './styles';
 import { SecondaryMenuDispatchProps, SecondaryMenuOwnProps, SecondaryMenuStateProps } from './typings';
+import { ApplicationState } from '../../../../infrastructure/redux/ApplicationState';
 
 // tslint:disable:object-literal-sort-keys
 
@@ -25,5 +25,5 @@ const mapDispatchToProps = (dispatch: Dispatch) : SecondaryMenuDispatchProps => 
     openLanguageMenu: (event: any) => dispatch(OpenLanguageMenuAction(event.currentTarget))
 });
 
-export default connect<SecondaryMenuStateProps, SecondaryMenuDispatchProps, SecondaryMenuOwnProps>
+export default connect<SecondaryMenuStateProps, SecondaryMenuDispatchProps, SecondaryMenuOwnProps, any>
   (mapStateToProps, mapDispatchToProps)(withStyles(SecondaryMenuStyles)(withNamespaces()(SecondaryMenuComponent)));

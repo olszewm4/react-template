@@ -1,9 +1,9 @@
 import { Action } from 'redux';
-import { ActionWithPayLoad } from 'src/app/infrastructure/redux/ActionCreateHelper';
-import { AppActionTypes } from 'src/app/infrastructure/redux/AppActionTypes';
 import { SecondaryMenuActionTypes } from './actions/SecondaryMenuActionTypes';
 import { ProfileMenuActionTypes } from './components/profileMenu/actions/ProfileMenuActions';
 import { SecondaryMenuState } from './SecondaryMenuState';
+import { AppActionTypes } from '../../../../infrastructure/redux/AppActionTypes';
+import { ActionWithPayLoad } from '../../../../infrastructure/redux/ActionCreateHelper';
 
 export const InitialSecondaryMenuState: SecondaryMenuState = {
     anchorElement: null

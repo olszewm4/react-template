@@ -5,11 +5,11 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import * as React from 'react';
 import { PureComponent } from 'react';
-import { Languages } from 'src/app/infrastructure/translation/Languages';
 import LanguageToFlagComponent from './components/languageMenu/components/LanguageToFlag/LanguageToFlagComponent';
 import LanguageMenuContainer from './components/languageMenu/LanguageMenuContainer';
 import ProfileMenuContainer from './components/profileMenu/ProfileMenuContainer';
 import { SecondaryMenuProps, SecondaryMenuVersions } from './typings';
+import { Languages } from '../../../../infrastructure/translation/Languages';
 
 export default class SecondaryMenuComponent extends PureComponent<SecondaryMenuProps, any> {
 

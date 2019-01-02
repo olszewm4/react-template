@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
-import { ApplicationState } from 'src/app/infrastructure/redux/ApplicationState';
 import ProgressComponent from './ProgressComponent';
 import { ProgressStateProps } from './typings';
+import { ApplicationState } from '../../infrastructure/redux/ApplicationState';
 
 const mapStateToProps = ({ StatisticsState }: ApplicationState) : ProgressStateProps => ({
     numberOfActiveRequests: StatisticsState.numberOfActiveRequests
 });
   
 
-export default connect<ProgressStateProps, any, any>
+export default connect<ProgressStateProps, any, any, any>
   (mapStateToProps, null)(ProgressComponent);

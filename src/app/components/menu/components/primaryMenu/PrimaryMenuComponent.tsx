@@ -1,6 +1,6 @@
 import { Divider, Drawer, Grid, Hidden, IconButton, List, ListItem } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import * as classNames from 'classnames';
+import classNames from 'classnames';
 import { PureComponent } from 'react';
 import * as React from 'react';
 import './../../../../common/commonStyles.css';

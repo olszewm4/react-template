@@ -1,10 +1,10 @@
 import { Menu, MenuItem } from '@material-ui/core';
 import { PureComponent } from 'react';
 import * as React from 'react';
-import i18n from 'src/app/infrastructure/translation/i18n';
-import { Languages } from 'src/app/infrastructure/translation/Languages';
 import LanguageToFlagComponent from './components/LanguageToFlag/LanguageToFlagComponent';
 import { LanguageMenuProps } from './typings';
+import { Languages } from '../../../../../../infrastructure/translation/Languages';
+import i18n from '../../../../../../infrastructure/translation/i18n';
 
 export default class LanguageMenuComponent extends PureComponent<LanguageMenuProps, any> {
 

@@ -1,5 +1,5 @@
-import { createAction } from "src/app/infrastructure/redux/ActionCreateHelper";
 import { StatisticsActionTypes } from './StatisticsActionTypes';
+import { createAction } from '../../ActionCreateHelper';
 
 
 export const NewRequestAction = () => createAction<StatisticsActionTypes>(StatisticsActionTypes.NewRequest);

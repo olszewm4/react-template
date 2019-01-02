@@ -1,9 +1,9 @@
 import { PureComponent } from 'react';
 import * as React from 'react';
 import { Route, RouteProps, Switch } from 'react-router-dom';
-import ErrorHandlerContainer from 'src/app/components/error/ErrorHandlerContainer';
 import RouteConfiguration from './RouteConfiguration';
 import { RouterProps } from './typings';
+import ErrorHandlerContainer from '../../../components/error/ErrorHandlerContainer';
 
 class RouterComponent extends PureComponent<RouterProps, any> {
 

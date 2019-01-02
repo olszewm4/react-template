@@ -1,9 +1,9 @@
 import { PureComponent } from 'react';
 import * as React from 'react';
-import { Languages } from 'src/app/infrastructure/translation/Languages';
 import './content/css/flag-custom.css';
 import './content/css/flag-icon.css';
 import { LanguageToFlagComponentProps } from './typings';
+import { Languages } from '../../../../../../../../infrastructure/translation/Languages';
 
 
 export default class LanguageToFlagComponent extends PureComponent<LanguageToFlagComponentProps, any> {

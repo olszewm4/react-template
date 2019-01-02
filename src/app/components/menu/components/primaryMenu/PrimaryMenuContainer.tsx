@@ -3,11 +3,11 @@ import { withNamespaces } from 'react-i18next';
 import { connect } from 'react-redux';
 import { withRouter } from "react-router";
 import { Dispatch } from 'redux';
-import { ApplicationState } from 'src/app/infrastructure/redux/ApplicationState';
 import { ClosePrimaryMenuAction, OpenPrimaryMenuAction } from './actions/PrimaryMenuActions';
 import { PrimaryMenuComponent } from './PrimaryMenuComponent';
 import { PrimaryMenuStyles } from './styles';
 import { PrimaryMenuDispatchProps, PrimaryMenuOwnProps, PrimaryMenuStateProps } from './typings';
+import { ApplicationState } from '../../../../infrastructure/redux/ApplicationState';
 
 
 const mapStateToProps = ({ PrimaryMenuState }: ApplicationState) : PrimaryMenuStateProps => ({
@@ -19,5 +19,5 @@ const mapDispatchToProps = (dispatch: Dispatch) : PrimaryMenuDispatchProps => ({
     openPrimaryMenu: () => dispatch(OpenPrimaryMenuAction()),
 });
 
-export default connect<PrimaryMenuStateProps, PrimaryMenuDispatchProps, PrimaryMenuOwnProps>
+export default connect<PrimaryMenuStateProps, PrimaryMenuDispatchProps, PrimaryMenuOwnProps, any>
   (mapStateToProps, mapDispatchToProps)(withStyles(PrimaryMenuStyles)(withRouter(withNamespaces("PrimaryMenuComponent")(PrimaryMenuComponent))));

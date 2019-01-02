@@ -1,5 +1,5 @@
 import { withSnackbar } from 'notistack';
-import { withErrorBoundary } from 'src/app/high-order-components/ErrorBoundary/withErrorBoundary';
 import { ErrorHandlerComponent } from './ErrorHandlerComponent';
+import { withErrorBoundary } from '../../high-order-components/ErrorBoundary/withErrorBoundary';
 
 export default withErrorBoundary(withSnackbar(ErrorHandlerComponent));

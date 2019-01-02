@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { PureComponent } from 'react';
 import { ErrorBoundaryInjectedProps } from './typings';
+import { Types } from '../../common/utils/types';
 
 
 const MISSING_ERROR = 'Error was swallowed during propagation.';

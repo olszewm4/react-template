@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { InterceptorsService } from 'src/app/infrastructure/axios/interceptors/InterceptorsService';
-import { ApplicationReducer } from 'src/app/infrastructure/redux/ApplicationReducer';
+import { InterceptorsService } from '../../infrastructure/axios/interceptors/InterceptorsService';
+import { ApplicationReducer } from '../../infrastructure/redux/ApplicationReducer';
 
 export let Store = createStore(ApplicationReducer);
 

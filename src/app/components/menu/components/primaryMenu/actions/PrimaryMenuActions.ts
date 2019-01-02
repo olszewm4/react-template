@@ -1,5 +1,5 @@
-import { createAction } from "src/app/infrastructure/redux/ActionCreateHelper";
 import { PrimaryMenuActionTypes } from './PrimaryMenuActionTypes';
+import { createAction } from '../../../../../infrastructure/redux/ActionCreateHelper';
 
 
 export const OpenPrimaryMenuAction = () => createAction<PrimaryMenuActionTypes>(PrimaryMenuActionTypes.OpenPrimaryMenu);

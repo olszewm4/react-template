@@ -1,10 +1,10 @@
 import { withNamespaces } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import { ApplicationState } from 'src/app/infrastructure/redux/ApplicationState';
 import { CloseLanguageMenuAction } from './actions/LanguageMenuActions';
 import LanguageMenuComponent from './LanguageMenuComponent';
 import { LanguageMenuDispatchProps, LanguageMenuStateProps } from './typings';
+import { ApplicationState } from '../../../../../../infrastructure/redux/ApplicationState';
 
 // tslint:disable:object-literal-sort-keys
 
@@ -18,5 +18,5 @@ const mapDispatchToProps = (dispatch: Dispatch) : LanguageMenuDispatchProps => (
     closeLanguageMenu: () => dispatch(CloseLanguageMenuAction())
 });
 
-export default connect<LanguageMenuStateProps, LanguageMenuDispatchProps, any>
+export default connect<LanguageMenuStateProps, LanguageMenuDispatchProps, any, any>
   (mapStateToProps, mapDispatchToProps)(withNamespaces("languages")(LanguageMenuComponent));

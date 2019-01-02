@@ -8,7 +8,7 @@ import { RouterProps } from './typings';
 
 class RouterContainer extends Component<RouterProps, any> {
 
-    private unlisten: H.UnregisterCallback;
+    private unlisten: H.UnregisterCallback = () => {};
 
     public render() {
         return (
