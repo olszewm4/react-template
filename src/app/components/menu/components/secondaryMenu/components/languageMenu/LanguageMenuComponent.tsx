@@ -10,7 +10,6 @@ export default class LanguageMenuComponent extends PureComponent<LanguageMenuPro
 
 
     public render() {
-        // tslint:disable-next-line:no-console
 
         const currentLanguage = this.props.lng;
         const { anchorElement, isLanguageMenuOpen } = this.props;
@@ -31,7 +30,6 @@ export default class LanguageMenuComponent extends PureComponent<LanguageMenuPro
                 }}
                 MenuListProps={{
                     style: {
-                        // tslint:disable-next-line:object-literal-sort-keys
                         paddingTop: 0, paddingBottom: 0
                     }
                 }}

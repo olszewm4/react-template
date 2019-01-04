@@ -3,7 +3,7 @@ import * as React from 'react';
 import '../../../../../infrastructure/content/global.animations.css';
 import * as localStyles from './content/logo.module.css';
 import logo from './content/logo.svg';
-import { LogoComponentProps } from './types';
+import { LogoComponentProps } from './typings';
 import classNames from 'classnames';
 
 export default class LogoComponent extends PureComponent<LogoComponentProps, any> {

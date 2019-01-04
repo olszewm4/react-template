@@ -4,7 +4,6 @@ import { SecondaryMenuState } from '../../components/menu/components/secondaryMe
 import { PrimaryMenuState } from '../../components/menu/components/primaryMenu/PrimaryMenuState';
 import { LanguageMenuState } from '../../components/menu/components/secondaryMenu/components/languageMenu/LanguageMenuState';
 
-// tslint:disable-next-line:interface-name
 export interface ApplicationState {
     ProfileMenuState: ProfileMenuState,
     SecondaryMenuState: SecondaryMenuState,

@@ -1,8 +1,6 @@
 import { WithNamespaces } from 'react-i18next';
 import { RouteComponentProps } from 'react-router-dom';
 
-// tslint:disable:interface-name
-
 export enum PrimaryMenuVersions {
     Desktop,
     Mobile

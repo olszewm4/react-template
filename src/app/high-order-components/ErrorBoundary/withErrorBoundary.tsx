@@ -12,7 +12,6 @@ export const withErrorBoundary = <WrappedProps extends ErrorBoundaryInjectedProp
     // Only own WrappedComponent props
     type HocProps = Types.Subtract<WrappedProps, ErrorBoundaryInjectedProps>;
 
-    // tslint:disable-next-line:interface-name
     interface HocState {
         readonly error: Error | null | undefined;
         readonly info: object | null | undefined;

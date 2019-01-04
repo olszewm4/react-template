@@ -1,4 +1,4 @@
-import { Grid } from '@material-ui/core';
+import { Grid, withStyles } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import * as React from 'react';
@@ -7,12 +7,13 @@ import PrimaryMenuContainer from './components/primaryMenu/PrimaryMenuContainer'
 import { PrimaryMenuVersions } from './components/primaryMenu/typings';
 import SecondaryMenuContainer from './components/secondaryMenu/SecondaryMenuContainer';
 import { SecondaryMenuVersions } from './components/secondaryMenu/typings';
-import { MenuComponentProps } from './types';
+import { MenuComponentProps } from './typings';
 import * as globalSizeStyles from './../../infrastructure/content/global.size.module.css';
+import { MenuStyles } from './content/styles';
 
 
 
-export class MenuComponent extends PureComponent<MenuComponentProps, any> {
+class MenuComponent extends PureComponent<MenuComponentProps, any> {
 
     public render() {
         const { classes } = this.props;
@@ -33,3 +34,5 @@ export class MenuComponent extends PureComponent<MenuComponentProps, any> {
         );
     }
 }
+
+export const MenuContainer = withStyles(MenuStyles)(MenuComponent);

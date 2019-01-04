@@ -1,7 +1,6 @@
 import { Action } from 'redux';
 import { AppActionTypes } from './AppActionTypes';
 
-// tslint:disable-next-line:interface-name
 export interface ActionWithPayLoad<T extends AppActionTypes, P> extends Action<T> {
     payload: P
 }

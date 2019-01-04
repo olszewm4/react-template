@@ -1,7 +1,7 @@
 import { Paper } from '@material-ui/core';
 import * as React from 'react';
 import { BrowserRouter, Route, RouteProps } from 'react-router-dom';
-import MenuContainer from './components/menu/MenuContainer';
+import { MenuContainer } from './components/menu/MenuComponent';
 import ProgressContainer from './components/progress/ProgressContainer';
 import * as localStyles from './content/app.module.css';
 import { withSnackbarProvider } from './high-order-components/SnackbarProvider/withSnackbarProvider';
@@ -11,7 +11,6 @@ import AnimatedRouterComponent from './infrastructure/routing/animation/Animated
 import { compose } from 'redux';
 
 class AppComponent extends React.Component {
-  // tslint::jsx-no-lambda
   public render() {
     return (
       <BrowserRouter>

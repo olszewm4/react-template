@@ -10,8 +10,6 @@ import { SecondaryMenuStyles } from './content/styles';
 import { SecondaryMenuDispatchProps, SecondaryMenuOwnProps, SecondaryMenuStateProps } from './typings';
 import { ApplicationState } from '../../../../infrastructure/redux/ApplicationState';
 
-// tslint:disable:object-literal-sort-keys
-
 const mapStateToProps = ({ SecondaryMenuState }: ApplicationState) : SecondaryMenuStateProps => ({
     anchorElement: SecondaryMenuState.anchorElement,
     isSecondaryMenuOpen: SecondaryMenuState.anchorElement != null

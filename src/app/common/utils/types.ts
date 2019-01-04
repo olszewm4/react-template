@@ -1,4 +1,3 @@
-// tslint:disable-next-line:no-namespace
 export declare module Types {
     export type SetDifference<A, B> = A extends B ? never : A;
     export type SetComplement<A, A1 extends A> = SetDifference<A, A1>;

@@ -5,8 +5,6 @@ import posed, { PoseGroup } from 'react-pose';
 import RouterContainer from '../core/RouterContainer';
 import { AnimatedRouterProps } from './typings';
 
-// tslint:disable:object-literal-sort-keys
-
 class AnimatedRouterComponent extends PureComponent<AnimatedRouterProps, any> {
 
     private PoseRouteContainer = posed.div({

@@ -8,7 +8,6 @@ import * as localStyles from './content/primary.menu.module.css';
 import * as globalSizeStyles from './../../../../infrastructure/content/global.size.module.css';
 import { PrimaryMenuProps, PrimaryMenuVersions } from './typings';
 
-// tslint:disable-next-line:interface-name
 interface MenuItem {
     name: string,
     path: string

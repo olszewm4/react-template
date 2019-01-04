@@ -5,10 +5,6 @@ import ErrorHandlerContainer from './app/components/error/ErrorHandlerContainer'
 import './app/infrastructure/translation/i18n';
 import registerServiceWorker from './registerServiceWorker';
 
-// tslint:disable-next-line:no-console
-console.log(process.env);
-
-
 ReactDOM.render(
   <ErrorHandlerContainer>
     <AppComponent />

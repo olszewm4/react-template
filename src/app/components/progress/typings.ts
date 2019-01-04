@@ -1,5 +1,3 @@
-
-// tslint:disable-next-line:interface-name
 export interface ProgressStateProps {
     numberOfActiveRequests: number,
 }

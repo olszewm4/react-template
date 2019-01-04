@@ -6,8 +6,6 @@ import LanguageMenuComponent from './LanguageMenuComponent';
 import { LanguageMenuDispatchProps, LanguageMenuStateProps } from './typings';
 import { ApplicationState } from '../../../../../../infrastructure/redux/ApplicationState';
 
-// tslint:disable:object-literal-sort-keys
-
 const mapStateToProps = ({ LanguageMenuState }: ApplicationState) : LanguageMenuStateProps => ({
     anchorElement: LanguageMenuState.anchorElement,
     isLanguageMenuOpen: LanguageMenuState.anchorElement != null

@@ -1,6 +1,5 @@
 import { Theme } from "@material-ui/core";
 
-// tslint:disable:object-literal-sort-keys
 export const SecondaryMenuStyles = (theme: Theme) => ({
     sectionDesktop: {
         display: 'none',

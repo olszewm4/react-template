@@ -6,8 +6,6 @@ import { ProfileMenuReducer } from '../../components/menu/components/secondaryMe
 import { SecondaryMenuReducer } from '../../components/menu/components/secondaryMenu/SecondaryMenuReducer';
 import { LanguageMenuReducer } from '../../components/menu/components/secondaryMenu/components/languageMenu/LanguageMenuReducer';
 
-// tslint:disable:object-literal-sort-keys
-
 export const ApplicationReducer = combineReducers<ApplicationState>({
     PrimaryMenuState: PrimaryMenuReducer,
     ProfileMenuState: ProfileMenuReducer,

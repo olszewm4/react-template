@@ -4,8 +4,6 @@ import * as React from 'react';
 import { ProgressProps, ProgressState } from './typings';
 import * as globalOthersStyles from './../../infrastructure/content/global.others.module.css';
 
-// tslint:disable:object-literal-sort-keys
-
 export default class ProgressComponent extends PureComponent<ProgressProps, ProgressState> {
 
     public static getDerivedStateFromProps(nextProps: ProgressProps, prevState: ProgressState): ProgressState | null {

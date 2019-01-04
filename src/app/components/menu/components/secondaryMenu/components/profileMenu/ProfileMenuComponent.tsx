@@ -20,7 +20,6 @@ export default class ProfileMenuComponent extends PureComponent<ProfileMenuProps
                 }}
                 MenuListProps={{
                     style: {
-                        // tslint:disable-next-line:object-literal-sort-keys
                         paddingTop: 0, paddingBottom: 0
                     }                
                 }}

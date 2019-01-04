@@ -1,7 +1,5 @@
 import { WithNamespaces } from 'react-i18next';
 
-// tslint:disable:interface-name
-
 export enum SecondaryMenuVersions {
     Desktop,
     Mobile

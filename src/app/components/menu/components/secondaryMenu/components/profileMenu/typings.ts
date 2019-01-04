@@ -1,5 +1,3 @@
-// tslint:disable:interface-name
-
 export interface ProfileMenuStateProps {
     anchorElement: any,
     isProfileMenuOpen: boolean
