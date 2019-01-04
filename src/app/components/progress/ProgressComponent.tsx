@@ -1,8 +1,8 @@
 import { LinearProgress } from '@material-ui/core';
 import { PureComponent } from 'react';
 import * as React from 'react';
-import './Progress.css';
 import { ProgressProps, ProgressState } from './typings';
+import * as globalOthersStyles from './../../infrastructure/content/global.others.module.css';
 
 // tslint:disable:object-literal-sort-keys
 
@@ -65,7 +65,7 @@ export default class ProgressComponent extends PureComponent<ProgressProps, Prog
         else {
             const classes = { bar1Determinate: "" };
             if(this.state.currentPercentageProgress === 0){
-                classes.bar1Determinate = "no-transition";
+                classes.bar1Determinate = globalOthersStyles["no-transition"];
             }
             
             return (

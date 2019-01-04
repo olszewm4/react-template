@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import * as React from 'react';
-import AppComponent from 'src/app/AppComponent';
+import AppComponent from '../app/AppComponent';
 
 it('renders without crashing', () => {
   shallow(<AppComponent />);

@@ -5,7 +5,7 @@ import { withRouter } from "react-router";
 import { Dispatch } from 'redux';
 import { ClosePrimaryMenuAction, OpenPrimaryMenuAction } from './actions/PrimaryMenuActions';
 import { PrimaryMenuComponent } from './PrimaryMenuComponent';
-import { PrimaryMenuStyles } from './styles';
+import { PrimaryMenuStyles } from './content/styles';
 import { PrimaryMenuDispatchProps, PrimaryMenuOwnProps, PrimaryMenuStateProps } from './typings';
 import { ApplicationState } from '../../../../infrastructure/redux/ApplicationState';
 

@@ -6,7 +6,7 @@ import { OpenSecondaryMenuAction } from './actions/SecondaryMenuActions';
 import { OpenLanguageMenuAction } from './components/languageMenu/actions/LanguageMenuActions';
 import { CloseProfileMenuAction, OpenProfileMenuAction } from './components/profileMenu/actions/ProfileMenuActionTypes';
 import SecondaryMenuComponent from './SecondaryMenuComponent';
-import { SecondaryMenuStyles } from './styles';
+import { SecondaryMenuStyles } from './content/styles';
 import { SecondaryMenuDispatchProps, SecondaryMenuOwnProps, SecondaryMenuStateProps } from './typings';
 import { ApplicationState } from '../../../../infrastructure/redux/ApplicationState';
 

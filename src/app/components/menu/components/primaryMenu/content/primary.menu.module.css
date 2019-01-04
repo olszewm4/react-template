@@ -1,0 +1,5 @@
+.sectionMainDesktopMenu {
+    composes: inheritMinHeight from './../../../../../infrastructure/content/global.size.module.css';
+    flex-direction: row;
+    display: flex;
+}

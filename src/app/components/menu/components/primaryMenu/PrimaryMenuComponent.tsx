@@ -3,9 +3,9 @@ import MenuIcon from '@material-ui/icons/Menu';
 import classNames from 'classnames';
 import { PureComponent } from 'react';
 import * as React from 'react';
-import './../../../../common/commonStyles.css';
 import LogoContainer from './components/LogoContainer';
-import './PrimaryMenu.css';
+import * as localStyles from './content/primary.menu.module.css';
+import * as globalSizeStyles from './../../../../infrastructure/content/global.size.module.css';
 import { PrimaryMenuProps, PrimaryMenuVersions } from './typings';
 
 // tslint:disable-next-line:interface-name
@@ -50,8 +50,8 @@ export class PrimaryMenuComponent extends PureComponent<PrimaryMenuProps, any> {
                         </IconButton>
                     </Hidden>
                 </Grid>
-                <Grid container={true} item={true} xs={6} className={classNames(classes.sectionDesktop, "inherit-min-height")} alignItems={"center"} justify={"center"}>
-                    <List className={classNames("sectionMainDesktopMenu", "inherit-min-height")} disablePadding={true}>
+                <Grid container={true} item={true} xs={6} className={classNames(classes.sectionDesktop, globalSizeStyles.inheritMinHeight)} alignItems={"center"} justify={"center"}>
+                    <List className={localStyles.sectionMainDesktopMenu} disablePadding={true}>
                         {this.renderMenu()}
                     </List>
                 </Grid>
