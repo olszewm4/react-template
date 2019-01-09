@@ -1,59 +1,45 @@
-import { LinearProgress } from '@material-ui/core';
-import { PureComponent } from 'react';
+import { LinearProgress, withStyles } from '@material-ui/core';
+import { Component } from 'react';
 import * as React from 'react';
 import { ProgressProps, ProgressState } from './typings';
 import * as globalOthersStyles from './../../infrastructure/content/global.others.module.css';
+import ProgressPropsToStateMapper from './ProgressPropsToStateMapper';
+import { ProgressStyles } from './content/styles';
+import * as ProgressStylesModule from './content/progress.module.css';
+import { ProgressHidingHelper } from './ProgressHidingHelper';
 
-export default class ProgressComponent extends PureComponent<ProgressProps, ProgressState> {
+class ProgressComponent extends Component<ProgressProps, ProgressState> {
 
     public static getDerivedStateFromProps(nextProps: ProgressProps, prevState: ProgressState): ProgressState | null {
-        if (prevState.numberOfRequestsInCurrentProgress === nextProps.numberOfActiveRequests) {
-            return null;
-        }
-
-        const nextState: ProgressState = { ...prevState, numberOfRequestsInCurrentProgress: nextProps.numberOfActiveRequests };
-        if (nextState.willBeInvisible) {
-            return nextState;
-        }
-
-        if (prevState.numberOfRequestsInCurrentProgress < nextProps.numberOfActiveRequests) {
-            nextState.isVisible = true;
-            if (nextProps.numberOfActiveRequests === 1) {
-                nextState.currentPercentageProgress = 0;
-            }
-        }
-        else if (prevState.numberOfRequestsInCurrentProgress > nextProps.numberOfActiveRequests) {
-            nextState.isVisible = true;
-            nextState.currentPercentageProgress = Math.min(prevState.currentPercentageProgress + Math.ceil((100 - prevState.currentPercentageProgress) / prevState.numberOfRequestsInCurrentProgress), 100);
-            nextState.willBeInvisible = nextState.currentPercentageProgress === 100;
-        }
-
-        return nextState;
+        const mapper = new ProgressPropsToStateMapper(nextProps, prevState);
+        return mapper.Map();
     }
 
-    private progressVisibilityTimer: any;
+    public readonly state: Readonly<ProgressState> = {
+        isVisible: false,
+        numberOfRequestsInCurrentProgress: 0,
+        currentPercentageProgress: 0
+    }
 
-    /**
-     *
-     */
-    constructor(props: ProgressProps, context?: any) {
-        super(props, context);
-        this.state = new ProgressState();
+    private progressHidingHelper: ProgressHidingHelper;
+
+    constructor(props: ProgressProps) {
+        super(props);
+        this.progressHidingHelper = new ProgressHidingHelper(this);
     }
 
     public shouldComponentUpdate = (nextProps: Readonly<ProgressProps>, nextState: Readonly<ProgressState>): boolean => {
-        return this.state.isVisible !== nextState.isVisible ||
-            this.state.currentPercentageProgress !== nextState.currentPercentageProgress;
+        return this.state.isVisible !== nextState.isVisible || this.state.currentPercentageProgress !== nextState.currentPercentageProgress;
     }
 
     public componentDidUpdate = (prevProps: Readonly<ProgressProps>, prevState: Readonly<ProgressState>): void => {
         if (this.state.currentPercentageProgress === 100) {
-            this.hideProgress();
+            this.progressHidingHelper.hide();
         }
     }
 
     public componentWillUnmount = () => {
-        this.clearVisibilityTimer();
+        this.progressHidingHelper.dispose();
     }
 
     public render = () => {
@@ -61,33 +47,23 @@ export default class ProgressComponent extends PureComponent<ProgressProps, Prog
             return (<React.Fragment />);
         }
         else {
-            const classes = { bar1Determinate: "" };
-            if(this.state.currentPercentageProgress === 0){
+            const classes = {...this.props.classes as Record<string, string>}
+            // to avoid coming back progress with transition
+            if (this.areAllRequestPending()) {
                 classes.bar1Determinate = globalOthersStyles["no-transition"];
             }
-            
+
             return (
-                <div style={{ position: 'absolute', top: 0, left: 0, right: 0 }}>
-                    <LinearProgress color="secondary" variant="determinate" value={this.state.currentPercentageProgress} classes={classes} style={{zIndex: 99999}} />
+                <div className={ProgressStylesModule.progressContainer}>
+                    <LinearProgress color="secondary" variant="determinate" value={this.state.currentPercentageProgress} className={classes.progress} classes={classes} />
                 </div>
             );
         }
     }
 
-    private hideProgress = (): void => {
-        this.progressVisibilityTimer = setTimeout(() => {
-            if(this.state.numberOfRequestsInCurrentProgress === 0){
-                this.setState({ isVisible: false, willBeInvisible: false, currentPercentageProgress: 0});
-            }
-            else {
-                this.setState({ willBeInvisible: false, currentPercentageProgress: 0});
-            }
-        }, 500);
-    }
-
-    private clearVisibilityTimer = (): void => {
-        if (this.progressVisibilityTimer) {
-            clearTimeout(this.progressVisibilityTimer);
-        }
+    private areAllRequestPending(){
+        return this.state.currentPercentageProgress === 0;
     }
 }
+
+export default withStyles(ProgressStyles)(ProgressComponent);

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { ErrorHandlerComponentProps } from './typings';
 import { withSnackbar } from 'notistack';
 
-class ErrorHandlerComponent extends PureComponent<ErrorHandlerComponentProps, any> {
+class ErrorHandlerComponent extends PureComponent<ErrorHandlerComponentProps> {
 
     public render() {
         this.props.enqueueSnackbar(this.props.error.toString() + (this.props.info as any).componentStack, { variant: 'error' });

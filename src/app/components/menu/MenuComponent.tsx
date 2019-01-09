@@ -1,4 +1,4 @@
-import { Grid, withStyles } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import * as React from 'react';
@@ -7,19 +7,14 @@ import PrimaryMenuContainer from './components/primaryMenu/PrimaryMenuContainer'
 import { PrimaryMenuVersions } from './components/primaryMenu/typings';
 import SecondaryMenuContainer from './components/secondaryMenu/SecondaryMenuContainer';
 import { SecondaryMenuVersions } from './components/secondaryMenu/typings';
-import { MenuComponentProps } from './typings';
 import * as globalSizeStyles from './../../infrastructure/content/global.size.module.css';
-import { MenuStyles } from './content/styles';
 
 
 
-class MenuComponent extends PureComponent<MenuComponentProps, any> {
-
+class MenuComponent extends PureComponent {
     public render() {
-        const { classes } = this.props;
-
         return (
-            <div className={classes.root}>
+            <div className={globalSizeStyles["width-100"]}>
                 <AppBar position="fixed">
                     <Toolbar>
                         <Grid container={true} className={globalSizeStyles.inheritMinHeight} justify="center" alignItems="center">
@@ -35,4 +30,4 @@ class MenuComponent extends PureComponent<MenuComponentProps, any> {
     }
 }
 
-export const MenuContainer = withStyles(MenuStyles)(MenuComponent);
+export const MenuContainer = MenuComponent;
