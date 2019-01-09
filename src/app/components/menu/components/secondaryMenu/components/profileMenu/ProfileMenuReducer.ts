@@ -3,7 +3,7 @@ import { ActionWithPayLoad } from '../../../../../../infrastructure/redux/Action
 import { ProfileMenuActionTypes } from './actions/ProfileMenuActions';
 import { ProfileMenuState } from './ProfileMenuState';
 
-export const InitialProfileMenuState: ProfileMenuState = {
+const InitialProfileMenuState: ProfileMenuState = {
     anchorElement: null
 }
 

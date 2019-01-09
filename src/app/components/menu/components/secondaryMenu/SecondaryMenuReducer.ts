@@ -5,7 +5,7 @@ import { SecondaryMenuState } from './SecondaryMenuState';
 import { AppActionTypes } from '../../../../infrastructure/redux/AppActionTypes';
 import { ActionWithPayLoad } from '../../../../infrastructure/redux/ActionCreateHelper';
 
-export const InitialSecondaryMenuState: SecondaryMenuState = {
+const InitialSecondaryMenuState: SecondaryMenuState = {
     anchorElement: null
 }
 

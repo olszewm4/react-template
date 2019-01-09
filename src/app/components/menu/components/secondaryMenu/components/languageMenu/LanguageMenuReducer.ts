@@ -3,7 +3,7 @@ import { ActionWithPayLoad } from '../../../../../../infrastructure/redux/Action
 import { LanguageMenuActionTypes } from './actions/LanguageMenuActionTypes';
 import { LanguageMenuState } from './LanguageMenuState';
 
-export const InitialLanguageMenuState: LanguageMenuState = {
+const InitialLanguageMenuState: LanguageMenuState = {
     anchorElement: null
 }
 

@@ -3,7 +3,7 @@ import { PrimaryMenuActionTypes } from './actions/PrimaryMenuActionTypes';
 import { PrimaryMenuState } from './PrimaryMenuState';
 import { AppActionTypes } from '../../../../infrastructure/redux/AppActionTypes';
 
-export const InitialPrimaryMenuState: PrimaryMenuState = {
+const InitialPrimaryMenuState: PrimaryMenuState = {
     isOpen: false
 }
 
