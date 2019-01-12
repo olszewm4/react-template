@@ -1,19 +1,12 @@
 import { Typography } from '@material-ui/core';
 import axios from 'axios';
-import { PureComponent } from 'react';
+import { PureComponent, ReactNode } from 'react';
 import * as React from 'react';
 import { HomePageComponentProps } from './typings';
 
 export default class HomePageComponent extends PureComponent<HomePageComponentProps, any> {
 
-
-  public componentDidMount(){
-    for(let i = 0;i < 3; i++){
-      axios.get("./data/tasks.json");
-    }
-  }
-
-  public render() {
+  public render = () : ReactNode => {
     return (
       <React.Fragment>
         <Typography variant="h5" component="h3" style={{ paddingBottom: "1em" }}>
@@ -21,5 +14,11 @@ export default class HomePageComponent extends PureComponent<HomePageComponentPr
           </Typography>
       </React.Fragment>
     )
+  }
+
+  public componentDidMount = () : void => {
+    for(let i = 0;i < 3; i++){
+      axios.get("./data/tasks.json");
+    }
   }
 }

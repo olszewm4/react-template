@@ -2,6 +2,7 @@ import { ApplicationState } from '../redux/ApplicationState';
 import { AnyAction, Store, createStore } from 'redux';
 import { ApplicationReducer } from '../redux/ApplicationReducer';
 import { InterceptorsService } from '../axios/interceptors/InterceptorsService';
+import './../translation/i18n';
 
 export default class AppRoot {
     

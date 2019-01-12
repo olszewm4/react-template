@@ -2,7 +2,6 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import AppComponent from './app/AppComponent';
 import ErrorHandlerContainer from './app/components/error/ErrorHandlerContainer';
-import './app/infrastructure/translation/i18n';
 import registerServiceWorker from './registerServiceWorker';
 import AppRoot from './app/infrastructure/compositionRoot/AppRoot';
 

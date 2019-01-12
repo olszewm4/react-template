@@ -1,13 +1,17 @@
-import { PureComponent } from 'react';
+import * as H from 'history';
+import { PureComponent, ReactNode } from 'react';
 import * as React from 'react';
 import { Route, RouteProps, Switch } from 'react-router-dom';
 import RouteConfiguration from './RouteConfiguration';
 import { RouterProps } from './typings';
 import ErrorHandlerContainer from '../../../components/error/ErrorHandlerContainer';
+import { withSnackbar } from 'notistack';
 
-class RouterComponent extends PureComponent<RouterProps, any> {
+class RouterComponent extends PureComponent<RouterProps> {
 
-    public render() {
+    private unlisten: H.UnregisterCallback = () => {};
+
+    public render = () : ReactNode => {
         return (
             <ErrorHandlerContainer>
                 <Switch location={this.props.location}>
@@ -18,7 +22,23 @@ class RouterComponent extends PureComponent<RouterProps, any> {
             </ErrorHandlerContainer>
         )
     }
+
+    public componentDidMount = () : void => {
+        this.unlisten = this.props.history.listen((location: H.Location<any>, action) => {
+            this.onRouteChanged(this.props.location as H.Location<any>, location);
+        });
+    }
+
+    public componentWillUnmount = () : void => {
+        this.unlisten();
+    }
+
+    private onRouteChanged(prevLocation: H.Location<any>, nextLocation: H.Location<any>) {
+        if (prevLocation.pathname !== nextLocation.pathname) {
+            this.props.enqueueSnackbar(`Router change: ${prevLocation.pathname} -> ${nextLocation.pathname}`, { variant: 'info' });
+        }
+    }
 }
 
 
-export default RouterComponent;
+export default withSnackbar(RouterComponent);

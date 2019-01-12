@@ -1,7 +1,7 @@
-import { Component } from 'react';
+import { PureComponent } from 'react';
 import * as React from 'react';
 
-export default class NotFoundPage extends Component<any, any> {
+export default class NotFoundPage extends PureComponent {
   public render() {
     return (
       <div>
