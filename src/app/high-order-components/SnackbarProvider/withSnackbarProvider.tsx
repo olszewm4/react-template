@@ -2,6 +2,7 @@ import { IconButton } from '@material-ui/core';
 import { Close } from '@material-ui/icons';
 import { SnackbarProvider } from 'notistack';
 import * as React from 'react';
+import { ReactNode } from 'react';
 
 
 export const withSnackbarProvider = <WrappedProps extends {}>(WrappedComponent: React.ComponentType<WrappedProps>) => {
@@ -9,7 +10,7 @@ export const withSnackbarProvider = <WrappedProps extends {}>(WrappedComponent: 
     return class WithSnackbarProvider extends React.Component<WrappedProps> {
         public static displayName = `withSnackbarProvider(${WrappedComponent.name})`;
 
-        public render() {
+        public render = () : ReactNode => {
             return (
                 <SnackbarProvider
                     maxSnack={3}

@@ -1,6 +1,6 @@
 import { PureComponent } from 'react';
 import * as React from 'react';
-import '../../../../../infrastructure/content/global.animations.css';
+import '../../../../../../infrastructure/content/global.animations.css';
 import * as localStyles from './content/logo.module.css';
 import logo from './content/logo.svg';
 import { LogoComponentProps } from './typings';

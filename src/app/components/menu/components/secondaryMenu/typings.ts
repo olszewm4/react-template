@@ -1,4 +1,5 @@
 import { WithNamespaces } from 'react-i18next';
+import { StyledComponentProps } from '@material-ui/core/styles/withStyles';
 
 export enum SecondaryMenuVersions {
     Desktop,
@@ -20,10 +21,5 @@ export interface SecondaryMenuDispatchProps {
     openProfileMenu(anchorElement: any): void;
     openLanguageMenu(anchorElement: any): void;
 }
-
-interface StyledComponentProps {
-    classes: any
-}
-
 
 export type SecondaryMenuProps = SecondaryMenuDispatchProps & SecondaryMenuStateProps & SecondaryMenuOwnProps & StyledComponentProps & WithNamespaces;

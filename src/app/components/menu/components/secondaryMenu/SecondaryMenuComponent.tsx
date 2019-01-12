@@ -4,7 +4,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import * as React from 'react';
-import { PureComponent } from 'react';
+import { PureComponent, ReactNode } from 'react';
 import LanguageToFlagComponent from './components/languageMenu/components/LanguageToFlag/LanguageToFlagComponent';
 import LanguageMenuContainer from './components/languageMenu/LanguageMenuContainer';
 import ProfileMenuContainer from './components/profileMenu/ProfileMenuContainer';
@@ -13,7 +13,7 @@ import { Languages } from '../../../../infrastructure/translation/Languages';
 
 export default class SecondaryMenuComponent extends PureComponent<SecondaryMenuProps, any> {
 
-    public render() {
+    public render = () : ReactNode => {
         const { version } = this.props;
         if (version === SecondaryMenuVersions.Desktop) {
             return this.renderDesktop();
@@ -23,7 +23,7 @@ export default class SecondaryMenuComponent extends PureComponent<SecondaryMenuP
         }
     }
 
-    private renderMobile() {
+    private renderMobile = () : ReactNode => {
         const { anchorElement, isSecondaryMenuOpen, lng } = this.props;
         const { openProfileMenu, closeSecondaryMenu, openLanguageMenu } = this.props;
 
@@ -70,9 +70,11 @@ export default class SecondaryMenuComponent extends PureComponent<SecondaryMenuP
         );
     }
 
-    private renderDesktop() {
+    private renderDesktop = () : ReactNode =>  {
         const currentLanguage = this.props.i18n.languages[0] as Languages;
-        const { classes } = this.props;
+        const { classes } = this.props as {
+            classes: Record<string, string>
+        };
         const { isSecondaryMenuOpen } = this.props;
         const { openProfileMenu, openSecondaryMenu, openLanguageMenu } = this.props;
 

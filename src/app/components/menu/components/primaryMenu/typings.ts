@@ -1,5 +1,4 @@
-import { WithNamespaces } from 'react-i18next';
-import { RouteComponentProps } from 'react-router-dom';
+import { StyledComponentProps } from '@material-ui/core/styles/withStyles';
 
 export enum PrimaryMenuVersions {
     Desktop,
@@ -19,9 +18,5 @@ export interface PrimaryMenuDispatchProps {
     closePrimaryMenu(): void
 }
 
-interface StyledComponentProps {
-    classes: any
-}
 
-
-export type PrimaryMenuProps = PrimaryMenuDispatchProps & PrimaryMenuStateProps & PrimaryMenuOwnProps & StyledComponentProps & RouteComponentProps<any> & WithNamespaces;
+export type PrimaryMenuProps = PrimaryMenuDispatchProps & PrimaryMenuStateProps & PrimaryMenuOwnProps & StyledComponentProps;

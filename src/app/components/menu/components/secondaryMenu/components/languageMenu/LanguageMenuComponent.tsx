@@ -5,12 +5,11 @@ import LanguageToFlagComponent from './components/LanguageToFlag/LanguageToFlagC
 import { LanguageMenuProps } from './typings';
 import { Languages } from '../../../../../../infrastructure/translation/Languages';
 import i18n from '../../../../../../infrastructure/translation/i18n';
+import * as localStyles from './content/language.menu.module.css';
 
 export default class LanguageMenuComponent extends PureComponent<LanguageMenuProps, any> {
 
-
     public render() {
-
         const currentLanguage = this.props.lng;
         const { anchorElement, isLanguageMenuOpen } = this.props;
         const { closeLanguageMenu, t } = this.props;
@@ -41,7 +40,7 @@ export default class LanguageMenuComponent extends PureComponent<LanguageMenuPro
                             key={index}
                             onClick={changeLanguage.bind(this, value as Languages)}
                             selected={currentLanguage === value as Languages}>
-                            <div style={{ marginTop: "0.5em", marginBottom: "0.7em", marginRight: "0.5em" }}>
+                            <div className={localStyles.languageToFlagContainer}>
                                 <LanguageToFlagComponent language={value as Languages} />
                             </div>
                             {t(value)}
@@ -55,5 +54,6 @@ export default class LanguageMenuComponent extends PureComponent<LanguageMenuPro
     private changeLanguage = (lng: Languages): void => {
         i18n.changeLanguage(lng);
         this.props.closeLanguageMenu();
+        this.props.closeSecondaryMenu();
     };
 }

@@ -1,5 +1,5 @@
 import { LinearProgress, withStyles } from '@material-ui/core';
-import { Component } from 'react';
+import { Component, ReactNode } from 'react';
 import * as React from 'react';
 import { ProgressProps, ProgressState } from './typings';
 import * as globalOthersStyles from './../../infrastructure/content/global.others.module.css';
@@ -10,39 +10,14 @@ import { ProgressHidingHelper } from './ProgressHidingHelper';
 
 class ProgressComponent extends Component<ProgressProps, ProgressState> {
 
-    public static getDerivedStateFromProps(nextProps: ProgressProps, prevState: ProgressState): ProgressState | null {
-        const mapper = new ProgressPropsToStateMapper(nextProps, prevState);
-        return mapper.Map();
-    }
-
     public readonly state: Readonly<ProgressState> = {
+        animationTimeoutId: undefined,
         isVisible: false,
         numberOfRequestsInCurrentProgress: 0,
         currentPercentageProgress: 0
     }
 
-    private progressHidingHelper: ProgressHidingHelper;
-
-    constructor(props: ProgressProps) {
-        super(props);
-        this.progressHidingHelper = new ProgressHidingHelper(this);
-    }
-
-    public shouldComponentUpdate = (nextProps: Readonly<ProgressProps>, nextState: Readonly<ProgressState>): boolean => {
-        return this.state.isVisible !== nextState.isVisible || this.state.currentPercentageProgress !== nextState.currentPercentageProgress;
-    }
-
-    public componentDidUpdate = (prevProps: Readonly<ProgressProps>, prevState: Readonly<ProgressState>): void => {
-        if (this.state.currentPercentageProgress === 100) {
-            this.progressHidingHelper.hide();
-        }
-    }
-
-    public componentWillUnmount = () => {
-        this.progressHidingHelper.dispose();
-    }
-
-    public render = () => {
+    public render = () : ReactNode => {
         if (!this.state.isVisible) {
             return (<React.Fragment />);
         }
@@ -55,13 +30,32 @@ class ProgressComponent extends Component<ProgressProps, ProgressState> {
 
             return (
                 <div className={ProgressStylesModule.progressContainer}>
-                    <LinearProgress color="secondary" variant="determinate" value={this.state.currentPercentageProgress} className={classes.progress} classes={classes} />
+                    <LinearProgress color="secondary" variant="determinate" value={this.state.currentPercentageProgress} classes={classes} />
                 </div>
             );
         }
     }
 
-    private areAllRequestPending(){
+    public static getDerivedStateFromProps(nextProps: ProgressProps, prevState: ProgressState): ProgressState | null {
+        const mapper = new ProgressPropsToStateMapper(nextProps, prevState);
+        return mapper.Map();
+    }
+
+    public shouldComponentUpdate = (nextProps: Readonly<ProgressProps>, nextState: Readonly<ProgressState>): boolean => {
+        return this.state.isVisible !== nextState.isVisible || this.state.currentPercentageProgress !== nextState.currentPercentageProgress;
+    }
+
+    public componentDidUpdate = (prevProps: Readonly<ProgressProps>, prevState: Readonly<ProgressState>): void => {
+        if (ProgressPropsToStateMapper.shouldProgressBeHidden(this.state)) {
+            ProgressHidingHelper.hide(this);
+        }
+    }
+
+    public componentWillUnmount = () => {
+        ProgressHidingHelper.dispose(this);
+    }
+
+    private areAllRequestPending = () : boolean => {
         return this.state.currentPercentageProgress === 0;
     }
 }

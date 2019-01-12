@@ -1,4 +1,4 @@
-import { PureComponent } from 'react';
+import { PureComponent, ReactNode } from 'react';
 import * as React from 'react';
 import './content/css/flag-custom.css';
 import './content/css/flag-icon.css';
@@ -7,7 +7,7 @@ import { Languages } from '../../../../../../../../infrastructure/translation/La
 
 
 export default class LanguageToFlagComponent extends PureComponent<LanguageToFlagComponentProps, any> {
-    public render() {
+    public render = () : ReactNode => {
         const { language } = this.props;
         switch (language) {
             case Languages.Polish:

@@ -3,7 +3,7 @@ import { CSSProperties } from '@material-ui/core/styles/withStyles';
 import zIndex from '@material-ui/core/styles/zIndex';
 
 export const ProgressStyles = (theme: Theme): Record<string, CSSProperties> => ({
-    progress: {
+    root: {
         zIndex: zIndex.appBar
     }
 });

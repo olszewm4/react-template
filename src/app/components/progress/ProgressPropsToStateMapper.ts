@@ -19,7 +19,7 @@ export default class ProgressPropsToStateMapper {
         }
 
         const state: ProgressState = { ...this.prevState, numberOfRequestsInCurrentProgress: this.nextProps.numberOfActiveRequests };
-        if(this.willProgressBeHidden()){
+        if(ProgressPropsToStateMapper.shouldProgressBeHidden(this.prevState)){
             return state;
         }
 
@@ -33,12 +33,12 @@ export default class ProgressPropsToStateMapper {
         return state;
     }
 
-    private isNumberOfRequestsChanged(){
-        return this.prevState.numberOfRequestsInCurrentProgress !== this.nextProps.numberOfActiveRequests;
+    public static shouldProgressBeHidden(state: ProgressState){
+        return state.currentPercentageProgress === 100;
     }
 
-    private willProgressBeHidden(){
-        return this.prevState.currentPercentageProgress === 100;
+    private isNumberOfRequestsChanged(){
+        return this.prevState.numberOfRequestsInCurrentProgress !== this.nextProps.numberOfActiveRequests;
     }
 
     private hasNumberOfRequestsRisen(){

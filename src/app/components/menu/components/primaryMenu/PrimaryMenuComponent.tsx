@@ -1,29 +1,26 @@
-import { Divider, Drawer, Grid, Hidden, IconButton, List, ListItem } from '@material-ui/core';
+import { Divider, Drawer, Grid, Hidden, IconButton, List, ListItem, withStyles } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import classNames from 'classnames';
 import { PureComponent } from 'react';
 import * as React from 'react';
-import LogoContainer from './components/LogoContainer';
+import LogoContainer from './components/logo/LogoContainer';
 import * as localStyles from './content/primary.menu.module.css';
 import * as globalSizeStyles from './../../../../infrastructure/content/global.size.module.css';
 import { PrimaryMenuProps, PrimaryMenuVersions } from './typings';
+import { PrimaryMenuItem } from './components/primaryMenuItem/typings';
+import PrimaryMenuItemContainer from './components/primaryMenuItem/PrimaryMenuItemContainer';
+import { PrimaryMenuStyles } from './content/styles';
 
-interface MenuItem {
-    name: string,
-    path: string
-}
+class PrimaryMenuComponent extends PureComponent<PrimaryMenuProps, any> {
 
-export class PrimaryMenuComponent extends PureComponent<PrimaryMenuProps, any> {
-
-    private menuItems: MenuItem[] = [
+    private menuItems: PrimaryMenuItem[] = [
         { name: 'Home', path: "/Home" },
         { name: 'About', path: "/About/0" },
         { name: 'Tasks', path: "/Home" },
     ];
 
     public render() {
-        const { version } = this.props;
-        if (version === PrimaryMenuVersions.Desktop) {
+        if (this.props.version === PrimaryMenuVersions.Desktop) {
             return this.renderDesktop();
         }
         else {
@@ -31,9 +28,10 @@ export class PrimaryMenuComponent extends PureComponent<PrimaryMenuProps, any> {
         }
     }
 
-
     private renderDesktop() {
-        const { classes } = this.props;
+        const { classes } = this.props as {
+            classes: Record<string, string>
+        };
 
         return (
             <React.Fragment>
@@ -44,14 +42,14 @@ export class PrimaryMenuComponent extends PureComponent<PrimaryMenuProps, any> {
                         </Grid>
                     </Hidden>
                     <Hidden mdUp={true}>
-                        <IconButton className={classes.menuButton} onClick={this.onMenuToggle} color="inherit" aria-label="Open drawer">
+                        <IconButton className={classes.menuButton} onClick={this.handleMenuToggle} color="inherit" aria-label="Open drawer">
                             <MenuIcon />
                         </IconButton>
                     </Hidden>
                 </Grid>
                 <Grid container={true} item={true} xs={6} className={classNames(classes.sectionDesktop, globalSizeStyles.inheritMinHeight)} alignItems={"center"} justify={"center"}>
                     <List className={localStyles.sectionMainDesktopMenu} disablePadding={true}>
-                        {this.renderMenu()}
+                        {this.renderMenuItems()}
                     </List>
                 </Grid>
             </React.Fragment>
@@ -60,13 +58,14 @@ export class PrimaryMenuComponent extends PureComponent<PrimaryMenuProps, any> {
 
     private renderMobile() {
         const { isPrimaryMenuOpen } = this.props;
+
         return (
             <Hidden mdUp={true} implementation="css">
                 <Drawer
                     variant="temporary"
                     anchor={'left'}
                     open={isPrimaryMenuOpen}
-                    onClose={this.onMenuToggle}
+                    onClose={this.handleMenuToggle}
                     ModalProps={{
                         keepMounted: true, // Better open performance on mobile.
                     }}>
@@ -75,28 +74,22 @@ export class PrimaryMenuComponent extends PureComponent<PrimaryMenuProps, any> {
                             <LogoContainer />
                         </ListItem>
                         <Divider />
-                        {this.renderMenu()}
+                        {this.renderMenuItems()}
                     </List>
                 </Drawer>
             </Hidden>
         );
     }
 
-    private renderMenu() {
+    private renderMenuItems() {
         return (
             <React.Fragment>
-                {this.menuItems.map((value: MenuItem, index: number) => (
-                    <ListItem button={true} key={index} onClick={this.onMenuItemClick.bind(this, value)} style={{ textAlign: "unset", width: "unset" }} >
-                        <strong>
-                            {this.props.t(value.name, { ns: "PrimaryMenuComponent", defaultValue: value.name })}
-                        </strong>
-                    </ListItem>
-                ))}
+                {this.menuItems.map((value: PrimaryMenuItem, index: number) => <PrimaryMenuItemContainer key={index} item={value} /> )}
             </React.Fragment>
         )
     }
 
-    private onMenuToggle = (): void => {
+    private handleMenuToggle = (): void => {
         if (this.props.isPrimaryMenuOpen) {
             this.props.closePrimaryMenu();
         }
@@ -104,9 +97,6 @@ export class PrimaryMenuComponent extends PureComponent<PrimaryMenuProps, any> {
             this.props.openPrimaryMenu();
         }
     }
-
-    private onMenuItemClick = (item: MenuItem): void => {
-        this.props.closePrimaryMenu();
-        this.props.history.push(item.path);
-    }
 }
+
+export default withStyles(PrimaryMenuStyles)(PrimaryMenuComponent);
