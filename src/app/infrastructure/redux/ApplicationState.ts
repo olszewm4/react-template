@@ -1,3 +1,4 @@
+import { TasksPageState } from './../../pages/tasks/TasksPageState';
 import { StatisticsState } from './modules/statistics/StatisticsState';
 import { ProfileMenuState } from '../../components/menu/components/secondaryMenu/components/profileMenu/ProfileMenuState';
 import { SecondaryMenuState } from '../../components/menu/components/secondaryMenu/SecondaryMenuState';
@@ -9,5 +10,6 @@ export interface ApplicationState {
     SecondaryMenuState: SecondaryMenuState,
     PrimaryMenuState: PrimaryMenuState,
     LanguageMenuState: LanguageMenuState,
-    StatisticsState: StatisticsState
+    StatisticsState: StatisticsState,
+    TasksPageState: TasksPageState
 }

@@ -1,8 +1,9 @@
 import { ApplicationState } from '../redux/ApplicationState';
-import { AnyAction, Store, createStore } from 'redux';
+import { AnyAction, Store, createStore, applyMiddleware } from 'redux';
 import { ApplicationReducer } from '../redux/ApplicationReducer';
 import { InterceptorsService } from '../axios/interceptors/InterceptorsService';
 import './../translation/i18n';
+import thunk from 'redux-thunk';
 
 export default class AppRoot {
     
@@ -30,7 +31,7 @@ export default class AppRoot {
     }
 
     public OnApplicationStart = () : void => {
-        this.store = createStore(ApplicationReducer);
+        this.store = createStore(ApplicationReducer, applyMiddleware(thunk));
         InterceptorsService.setup(this.store);
     }
 }

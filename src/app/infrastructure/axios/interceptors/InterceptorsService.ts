@@ -12,15 +12,16 @@ export class InterceptorsService {
         axios.interceptors.request.use((config: AxiosRequestConfig) => {
             // -------------- Delay for debug purposes ----------------
             // InterceptorsService.numberOfRequests++;
+
             store.dispatch(NewRequestAction());
             return config;
         });
 
         axios.interceptors.response.use(response => {
+
             // -------------- Delay for debug purposes ----------------
             // return new Promise((resolve, reject) => {
             //     InterceptorsService.numberOfRequests--;
-
             //     setTimeout(() => {
             //         store.dispatch(RequestCompletedAction());
             //         resolve(response)
@@ -29,6 +30,14 @@ export class InterceptorsService {
 
             store.dispatch(RequestCompletedAction());
             return response;
+        }, error => {
+            // -------------- Delay for debug purposes ----------------
+            // InterceptorsService.numberOfRequests--;
+            // setTimeout(() => {
+            //     store.dispatch(RequestCompletedAction());
+            // }, 3000 / InterceptorsService.numberOfRequests);
+
+            store.dispatch(RequestCompletedAction());
         })
     }
 }

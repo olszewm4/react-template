@@ -3,12 +3,14 @@ import { SecondaryMenuActionTypes } from '../../components/menu/components/secon
 import { LanguageMenuActionTypes } from '../../components/menu/components/secondaryMenu/components/languageMenu/actions/LanguageMenuActionTypes';
 import { ProfileMenuActionTypes } from '../../components/menu/components/secondaryMenu/components/profileMenu/actions/ProfileMenuActions';
 import { StatisticsActionTypes } from './modules/statistics/StatisticsActionTypes';
+import { TasksPageActionTypes } from '../../pages/tasks/actions/TasksPageActionTypes';
 
 export type AppActionTypes =  
     ProfileMenuActionTypes |
     SecondaryMenuActionTypes |
     PrimaryMenuActionTypes |
     LanguageMenuActionTypes |
-    StatisticsActionTypes;
+    StatisticsActionTypes |
+    TasksPageActionTypes;
 
 

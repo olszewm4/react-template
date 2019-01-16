@@ -5,11 +5,13 @@ import { PrimaryMenuReducer } from '../../components/menu/components/primaryMenu
 import { ProfileMenuReducer } from '../../components/menu/components/secondaryMenu/components/profileMenu/ProfileMenuReducer';
 import { SecondaryMenuReducer } from '../../components/menu/components/secondaryMenu/SecondaryMenuReducer';
 import { LanguageMenuReducer } from '../../components/menu/components/secondaryMenu/components/languageMenu/LanguageMenuReducer';
+import { TasksPageReducer } from '../../pages/tasks/TasksPageReducer';
 
 export const ApplicationReducer = combineReducers<ApplicationState>({
     PrimaryMenuState: PrimaryMenuReducer,
     ProfileMenuState: ProfileMenuReducer,
     SecondaryMenuState: SecondaryMenuReducer,
     LanguageMenuState: LanguageMenuReducer,
-    StatisticsState: StatisticsReducer
+    StatisticsState: StatisticsReducer,
+    TasksPageState: TasksPageReducer
 });

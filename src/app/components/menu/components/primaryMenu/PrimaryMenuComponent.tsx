@@ -16,7 +16,7 @@ class PrimaryMenuComponent extends PureComponent<PrimaryMenuProps, any> {
     private menuItems: PrimaryMenuItem[] = [
         { name: 'Home', path: "/Home" },
         { name: 'About', path: "/About/0" },
-        { name: 'Tasks', path: "/Home" },
+        { name: 'Tasks', path: "/Tasks" },
     ];
 
     public render() {
